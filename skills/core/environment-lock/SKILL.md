@@ -36,7 +36,7 @@ every evidence run records the environment fingerprint it ran under.**
 3. **Group the optional extras**: heavyweight or phase-specific stacks (dev tooling, GPU
    frameworks) go in optional dependency groups so the base install stays resolvable.
 4. **Record the system layer**: domain engines and system libraries that the lockfile cannot
-   see (commercial solver builds, CUDA/driver versions, compiler toolchains, BLAS
+   see (commercial engine builds, CUDA/driver versions, compiler toolchains, BLAS
    implementation) are recorded in the project README or environment doc, and their versions
    land in each run's meta file.
 5. **Run native, not emulated.** On mixed-architecture machines, verify the interpreter

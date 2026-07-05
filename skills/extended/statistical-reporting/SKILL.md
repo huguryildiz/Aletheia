@@ -42,7 +42,7 @@ how numbers become claims.
    unknown distributions prefer rank-based tests (e.g. paired signed-rank) over normality
    assumptions.
 5. **Keep denominators visible.** Failed, infeasible, and timed-out cells are part of the
-   result: "median over the 6/10 realizations that solved; 4 infeasible (recorded)" — never
+   result: "median over the 6/10 realizations that completed; 4 infeasible (recorded)" — never
    silently condition on success (`evidence-convention` rule 5).
 6. **Report direction, magnitude, and uncertainty** — not a bare p-value. A significant
    difference of negligible size and a non-significant trend are both reportable truths;

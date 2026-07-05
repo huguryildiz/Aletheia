@@ -76,7 +76,7 @@ This pack ships no writer agents — the pattern is documented here and in the p
 4. **The expectation field is written before launch.** Post-hoc "expected" values are
    predictions in name only.
 5. **Anomaly patterns are flags to report, not noise to smooth** — a status-rate split
-   across seed batches, cells far above median solve time, cache misses forcing recomputes.
+   across seed batches, cells far above the median cell time, cache misses forcing recomputes.
 
 ## Configuration
 
