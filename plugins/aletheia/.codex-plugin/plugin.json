@@ -9,6 +9,7 @@
   "homepage": "https://github.com/huguryildiz/Aletheia",
   "repository": "https://github.com/huguryildiz/Aletheia",
   "keywords": ["research", "reproducibility", "computational-science", "research-ops", "skills"],
+  "license": "MIT",
   "interface": {
     "displayName": "Aletheia",
     "shortDescription": "Operating discipline for reproducible computational-science research.",

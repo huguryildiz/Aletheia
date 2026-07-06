@@ -8,5 +8,6 @@
     "url": "https://github.com/huguryildiz"
   },
   "keywords": ["research", "reproducibility", "computational-science", "research-ops", "skills"],
+  "license": "MIT",
   "skills": ["./skills/core", "./skills/extended"]
 }

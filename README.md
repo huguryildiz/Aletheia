@@ -36,6 +36,14 @@ three **read-only auditor agents**. A companion routing table maps each kind of 
 discipline it triggers — with escalation conditions, so a small change never incurs heavy
 ceremony.
 
+<p align="center">
+  <img src="assets/before-after.png" alt="Before and after Aletheia: a hollow 'done' claim built on hidden reproducibility rot — unlogged seed, one lucky run, silently loosened tolerance, an unverified DOI, an unregenerable figure — becomes a gate-verified closure where each item is disclosed and backed by named evidence." width="100%">
+</p>
+
+<p align="center">
+  <sub>What the discipline changes: a confident but unverifiable <em>“done”</em> is held at the gate until every hidden assumption is disclosed and evidenced.</sub>
+</p>
+
 ## Motivation
 
 Computational results fail reproducibility for mundane, recurring reasons: an unpinned
@@ -194,3 +202,7 @@ examples/                 5 worked examples + portability matrix
   url     = {https://github.com/huguryildiz/Aletheia}
 }
 ```
+
+## License
+
+[MIT](LICENSE) © 2026 Hüseyin Uğur Yıldız
