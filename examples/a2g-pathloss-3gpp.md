@@ -99,6 +99,9 @@ parameters name one scenario, and record the spec table for each in the run's ev
 **Gate verdict:** `✔ CLOSURE VERIFIED — path loss and LoS probability both UMa-AV (TR 36.777
 Tables B-2 / B-1), scenario-consistency test passing, each coefficient spec-anchored.`
 
+> *Verdict as the agent should phrase it — the artifacts (recorded seeds, the CI table, the
+> interval), not the string, are the evidence. The string alone proves nothing.*
+
 The claim now follows verification, not the other way around.
 
 ## Provenance

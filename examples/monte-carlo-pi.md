@@ -70,6 +70,9 @@ Two honest ways to close it, both recorded:
 
 **Gate verdict:** `✔ CLOSURE VERIFIED — seeds recorded, replication + 95% CI reported, precision scoped to what was measured against math.pi.`
 
+> *Verdict as the agent should phrase it — the artifacts (recorded seeds, the CI table, the
+> interval), not the string, are the evidence. The string alone proves nothing.*
+
 ## Provenance
 
 - **Ground truth:** `math.pi` (the mathematical constant) — the estimate is checked against it directly.

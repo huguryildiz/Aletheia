@@ -2,7 +2,7 @@
 
 Aletheia in one sentence: **a set of runbooks that make a computational-research repo
 produce evidence instead of anecdotes.** This page gets you from install to your first
-enforced discipline.
+practiced discipline — your first gate.
 
 ## 1. Install (2 min)
 

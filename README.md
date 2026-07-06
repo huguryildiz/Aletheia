@@ -39,11 +39,11 @@ ceremony.
 </p>
 
 <p align="center">
-  <a href="https://claude.ai/code/artifact/5bfcc9ae-2530-47d3-b5ce-fcd938d31238"><img src="assets/pi-monte-carlo.svg" alt="Dot-plot: twenty Monte-Carlo estimates of π (seeds 0–19) scatter across a band far wider than the ±1e-4 a single lucky run claimed; their 95% CI is ±8.9e-4, and the reported run at 3.142436 sits outside that interval, off by 8.4e-4. Aletheia holds the claim until the interval is reported and the seed logged." width="100%"></a>
+  <a href="https://claude.ai/code/artifact/5bfcc9ae-2530-47d3-b5ce-fcd938d31238"><img src="assets/pi-monte-carlo.svg" alt="Dot-plot: twenty Monte-Carlo estimates of π (seeds 0–19) scatter across a band far wider than the ±1e-4 a single lucky run claimed; their 95% CI is ±8.9e-4, and the reported run at 3.142436 sits outside that interval, off by 8.4e-4. The discipline directs the agent to hold the claim until the interval is reported and the seed logged." width="100%"></a>
 </p>
 
 <p align="center">
-  <sub>A second <strong>real</strong> case (<a href="examples/monte-carlo-pi.md">worked out here</a> · <a href="https://claude.ai/code/artifact/5bfcc9ae-2530-47d3-b5ce-fcd938d31238">animated version</a>): one lucky Monte-Carlo run claimed π to ±1×10⁻⁴; the 20 recorded runs scatter 30× wider (95% CI ±8.9×10⁻⁴), and the gate holds the claim until the interval is reported and the seed logged.</sub>
+  <sub>A second <strong>real</strong> case (<a href="examples/monte-carlo-pi.md">worked out here</a> · <a href="https://claude.ai/code/artifact/5bfcc9ae-2530-47d3-b5ce-fcd938d31238">animated version</a>): one lucky Monte-Carlo run claimed π to ±1×10⁻⁴; the 20 recorded runs scatter 30× wider (95% CI ±8.9×10⁻⁴), and the discipline directs the agent to hold the claim until the interval is reported and the seed logged.</sub>
 </p>
 
 ## Motivation
@@ -153,8 +153,10 @@ walkthrough:** [`docs/adopting-in-a-new-project.md`](docs/adopting-in-a-new-proj
 
 ## Design principles
 
-1. **Ground-truth only** — every runbook step was verified against a real repository; inference
-   is labeled as inference, and a wrong runbook is worse than none.
+1. **Ground-truth only** — core runbook steps were harvested from a working repository;
+   extended steps were authored from canon and grounded where that repository practiced them
+   (see [core-vs-extended.md](docs/core-vs-extended.md)). Inference is labeled as inference,
+   and a wrong runbook is worse than none.
 2. **State is derived, not stored** — no mutable status file anywhere; gate verdicts live in
    immutable evidence (run metadata, build-log closures, tags) and are recomputed.
 3. **No source mutation** — the agents are read-only reporters; every write is a skill action a
@@ -171,7 +173,8 @@ tier semantics and the work-type routing table:
 The core skills were **generalized from the operating rules of one real computational-research
 repository** and stress-tested until they read naturally in domains with no shared machinery.
 That source project's identity and vocabulary are deliberately excluded from the shipped pack: a
-mechanical gate requires that `skills/` and `templates/` contain **zero domain terms**. Concrete
+**CI portability gate** (denylist in [`docs/portability-vocab.txt`](docs/portability-vocab.txt))
+requires that `skills/` and `templates/` contain **zero domain terms**. Concrete
 instantiation lives only in [`examples/`](examples/) — five fictional worked examples (deep
 learning, variational quantum algorithms, climate-ensemble calibration, molecular-dynamics free
 energy, and plasma simulation) plus a ten-domain portability matrix, included to demonstrate that
