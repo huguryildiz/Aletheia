@@ -1,6 +1,7 @@
 ---
 name: research-methodology
-description: Use when shaping how research work is conducted and claimed — setting the evidence bar for "done", pre-registering expected numbers before a run, deciding whether an idea becomes an experiment or gets retired, choosing test density for new code, or calibrating how much process a change deserves. Also use at session start after a gap. Trigger phrases: "what should we expect before running", "is this claim backed", "adopt or retire this idea", "how much testing does this need", "pre-register the hypothesis", "process for this change".
+description: >-
+  Use when shaping how research work is conducted and claimed — setting the evidence bar for "done", pre-registering expected numbers before a run, deciding whether an idea becomes an experiment or gets retired, choosing test density for new code, or calibrating how much process a change deserves. Also use at session start after a gap. Trigger phrases: "what should we expect before running", "is this claim backed", "adopt or retire this idea", "how much testing does this need", "pre-register the hypothesis", "process for this change".
 tier: core
 ---
 

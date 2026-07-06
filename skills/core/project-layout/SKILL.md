@@ -1,6 +1,7 @@
 ---
 name: project-layout
-description: Use when starting a new computational-science project, restructuring an existing one, or deciding where a new module, script, notebook, dataset, or document belongs. Also use when reviewing whether a repository's layout still matches its documented map. Trigger phrases: "where should this file go", "set up the project structure", "scaffold the repo", "folder layout", "project organization", "does this belong in scripts or notebooks".
+description: >-
+  Use when starting a new computational-science project, restructuring an existing one, or deciding where a new module, script, notebook, dataset, or document belongs. Also use when reviewing whether a repository's layout still matches its documented map. Trigger phrases: "where should this file go", "set up the project structure", "scaffold the repo", "folder layout", "project organization", "does this belong in scripts or notebooks".
 tier: core
 ---
 

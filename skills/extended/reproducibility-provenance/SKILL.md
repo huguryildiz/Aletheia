@@ -1,6 +1,7 @@
 ---
 name: reproducibility-provenance
-description: Use when a run draws random numbers or produces a figure that will be kept — pinning seed/RNG provenance so stochastic draws are re-derivable, and figure provenance so every kept figure regenerates from one command. Also use when auditing whether a paper's figures can all be rebuilt from the repository. Trigger phrases: "record the seeds", "which seed produced this", "regenerate the figure", "figure provenance", "can we rebuild all figures", "unseeded randomness".
+description: >-
+  Use when a run draws random numbers or produces a figure that will be kept — pinning seed/RNG provenance so stochastic draws are re-derivable, and figure provenance so every kept figure regenerates from one command. Also use when auditing whether a paper's figures can all be rebuilt from the repository. Trigger phrases: "record the seeds", "which seed produced this", "regenerate the figure", "figure provenance", "can we rebuild all figures", "unseeded randomness".
 tier: extended
 status: recommended
 ---

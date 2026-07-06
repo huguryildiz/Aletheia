@@ -4,14 +4,13 @@
     "name": "Huseyin Ugur Yildiz",
     "url": "https://github.com/huguryildiz"
   },
-  "description": "Operating discipline for rigorous, reproducible computational-science research: 17 portable skills, 3 read-only auditor agents, and a generator meta-skill that adapts the library to any research repository.",
+  "description": "Operating discipline for rigorous, reproducible computational-science research: 18 portable skills, 3 read-only auditor agents, and a generator meta-skill that adapts the library to any research repository.",
   "plugins": [
     {
       "name": "aletheia",
       "source": "./",
-      "description": "17 portable skills, 3 read-only auditor agents, and a generator meta-skill that adapts the library to any research repository.",
-      "version": "0.1.0",
-      "license": "MIT"
+      "description": "18 portable skills, 3 read-only auditor agents, and a generator meta-skill that adapts the library to any research repository.",
+      "version": "0.1.0"
     }
   ]
 }

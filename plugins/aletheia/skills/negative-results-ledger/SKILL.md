@@ -1,0 +1,1 @@
+../../../../skills/extended/negative-results-ledger/SKILL.md

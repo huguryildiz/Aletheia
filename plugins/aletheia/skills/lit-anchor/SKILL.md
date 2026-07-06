@@ -1,0 +1,1 @@
+../../../../skills/extended/lit-anchor/SKILL.md

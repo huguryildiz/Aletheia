@@ -4,14 +4,12 @@
 
 <p align="center">
   <strong>Operating discipline for rigorous, reproducible computational-science research.</strong><br>
-  <sub>A portable Claude skill pack — discipline as instructions, not enforcement as scripts.</sub>
+  <sub>A portable Agent Skills pack for Claude Code and Codex — discipline as instructions, not enforcement as scripts.</sub>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/license-MIT-0f172a?style=for-the-badge&logo=opensourceinitiative&logoColor=white" alt="MIT License">
   <img src="https://img.shields.io/badge/markdown--only-no%20executable%20code-0b1220?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown only">
-  <img src="https://img.shields.io/badge/Claude%20Code-plugin-0b1220?style=for-the-badge&logo=claude&logoColor=white" alt="Claude Code plugin">
-  <img src="https://img.shields.io/badge/Agent%20Skills-standard-0b1220?style=for-the-badge&logo=anthropic&logoColor=white" alt="Agent Skills standard">
+  <img src="https://img.shields.io/badge/Agent%20Skills-standard-0b1220?style=for-the-badge" alt="Agent Skills standard">
   <img src="https://img.shields.io/badge/disciplines-18-0b1220?style=for-the-badge&logo=academia&logoColor=white" alt="18 disciplines">
 </p>
 
@@ -23,13 +21,14 @@
 
 ## Overview
 
-**Aletheia** is a portable, open-source Claude skill pack that encodes the *operating
+**Aletheia** is a portable, open-source Agent Skills pack that encodes the *operating
 discipline* of a results-producing computational-science project: where evidence lands, what
 gates a “done” claim, how decisions propagate across a repository, and what a number must carry
 before it enters a paper. It ships as **markdown only** — the pack is a set of runbooks an
 agent (or a person) follows, not a framework to install — which makes it model- and
-harness-portable by construction. The only non-markdown files are declarative data: the plugin
-manifest and one JSON Schema.
+harness-portable by construction. It ships as a Claude Code plugin and as a native Codex
+plugin. Non-markdown shipped files are limited to declarative manifests, marketplace
+metadata, schema files, and presentation assets.
 
 The library divides into **18 skills** (11 everyday-discipline *core*, 7 reproducibility-and-
 positioning *extended*), a **generator** that binds the pack to a specific repository, and
@@ -54,7 +53,7 @@ than reconstructed at submission time.
 
 ## What ships
 
-**18 skills · 1 generator · 3 agents · 5 templates · 5 docs · worked examples across five
+**18 skills · 1 generator · 3 agents · 5 templates · 6 docs · worked examples across five
 domains.**
 
 ### Core skills (11) — everyday discipline
@@ -88,8 +87,8 @@ domains.**
 ### Generator & agents
 
 - **`skill-library-generator`** — binds the pack to your repository by interview (a config
-  block in `CLAUDE.md`) and mines your project's own failure modes into local skills. Claude is
-  the runtime; there is no bootstrap script.
+  block in `CLAUDE.md`) and mines your project's own failure modes into local skills. The
+  invoking agent is the runtime; there is no bootstrap script.
 - **`session-historian`** (state digest from the record) · **`drift-auditor`** (layer-sync
   audit) · **`verifier`** (adversarial refutation of load-bearing claims). All three are
   read-only reporters — they write nothing, ever.
@@ -107,6 +106,13 @@ target is `aletheia@aletheia`:
 ```bash
 claude plugin marketplace add huguryildiz/Aletheia
 claude plugin install aletheia@aletheia
+```
+
+Codex CLI uses the same marketplace idea:
+
+```bash
+codex plugin marketplace add huguryildiz/Aletheia
+codex plugin add aletheia@aletheia
 ```
 
 Inside your project, invoke *“run the skill-library-generator.”* It scans the repository
@@ -143,8 +149,8 @@ walkthrough:** [`docs/adopting-in-a-new-project.md`](docs/adopting-in-a-new-proj
    immutable evidence (run metadata, build-log closures, tags) and are recomputed.
 3. **No source mutation** — the agents are read-only reporters; every write is a skill action a
    human sees and authorizes.
-4. **Markdown only** — the discipline is instructions, not code; the sole non-markdown files are
-   `plugin.json` and one JSON Schema.
+4. **Markdown only** — the discipline is instructions, not code; non-markdown shipped files
+   are declarative manifests/catalogs/schema plus presentation metadata.
 
 Full text and the portability gate: [`docs/design-principles.md`](docs/design-principles.md) ·
 tier semantics and the work-type routing table:
@@ -168,10 +174,12 @@ skills/core/…            11 everyday-discipline skills
 skills/extended/…         7 reproducibility & positioning skills
 skills/skill-library-generator/   the binder/generator meta-skill
 agents/                   3 read-only auditor agents
+plugins/aletheia/         Codex plugin root (symlinked skills + .codex-plugin/plugin.json)
+.agents/plugins/          Codex repo marketplace catalog
 templates/                CLAUDE.md config + routing, decisions skeleton, run-metadata schema
-docs/                     install · quickstart · adoption · core-vs-extended · design-principles
+docs/                     install · quickstart · adoption · core-vs-extended · design-principles · decisions
 examples/                 5 worked examples + portability matrix
-.claude-plugin/plugin.json         LICENSE (MIT)
+.claude-plugin/            Claude Code plugin manifest + marketplace metadata
 ```
 
 ## Citation
@@ -186,7 +194,3 @@ examples/                 5 worked examples + portability matrix
   url     = {https://github.com/huguryildiz/Aletheia}
 }
 ```
-
-## License
-
-MIT © 2026 Hüseyin Uğur Yıldız

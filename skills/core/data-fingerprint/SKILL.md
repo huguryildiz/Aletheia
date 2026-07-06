@@ -1,6 +1,7 @@
 ---
 name: data-fingerprint
-description: Use when a run consumes input data — datasets, external downloads, caches, config/constants files — and the run's evidence must record exactly which bytes went in; and when asking "did the data change between these two runs". Also use when registering a new external dataset (source, version, access date) or setting up content-addressed caching. Trigger phrases: "hash the inputs", "did the data change", "which dataset version", "fingerprint the config", "content-addressed cache", "data provenance".
+description: >-
+  Use when a run consumes input data — datasets, external downloads, caches, config/constants files — and the run's evidence must record exactly which bytes went in; and when asking "did the data change between these two runs". Also use when registering a new external dataset (source, version, access date) or setting up content-addressed caching. Trigger phrases: "hash the inputs", "did the data change", "which dataset version", "fingerprint the config", "content-addressed cache", "data provenance".
 tier: core
 ---
 

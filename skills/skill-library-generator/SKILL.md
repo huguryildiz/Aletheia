@@ -1,6 +1,7 @@
 ---
 name: skill-library-generator
-description: Use when adopting the Aletheia discipline in a new or existing research repository — discovering the project's actual conventions, interviewing the maintainer to fill the config bindings, extracting the project's own recurring failure modes into project-local skills, and scaffolding the record surfaces (decision log, build log, evidence dirs) after approval. Trigger phrases: "adopt aletheia here", "set up the research discipline", "generate skills for this repo", "bind the pack to this project", "run the adoption interview".
+description: >-
+  Use when adopting the Aletheia discipline in a new or existing research repository — discovering the project's actual conventions, interviewing the maintainer to fill the config bindings, extracting the project's own recurring failure modes into project-local skills, and scaffolding the record surfaces (decision log, build log, evidence dirs) after approval. Trigger phrases: "adopt aletheia here", "set up the research discipline", "generate skills for this repo", "bind the pack to this project", "run the adoption interview".
 tier: generator
 ---
 
@@ -9,8 +10,8 @@ tier: generator
 The meta-skill that adapts the pack to a concrete repository. Two jobs: **bind** the
 portable skills to this project (fill the config block by interview, grounded in what the
 repo actually contains), and **mine** the project's own recurring failure modes into
-project-local skills the pack does not ship. Claude is the runtime: everything below is
-done with file tools at invocation time — there is no bootstrap script.
+project-local skills the pack does not ship. The invoking agent is the runtime: everything
+below is done with file tools at invocation time — there is no bootstrap script.
 
 ## When to use
 
@@ -70,11 +71,14 @@ into:
 
 ## Phase 3 — Draft local skills
 
-For each approved project-specific candidate, draft `.claude/skills/<name>/SKILL.md` in the
-pack's house format: frontmatter (`name`, trigger-rich `description`), imperative runbook,
-a "when NOT to use" note, and a "Provenance & maintenance" section whose re-verification
-commands were **actually run in this repo during discovery**. Ground-truth-only: a runbook
-step you could not verify here does not ship; label anything inferred.
+For each approved project-specific candidate, draft a project-local `SKILL.md` in the
+active harness's skill directory (`.claude/skills/<name>/SKILL.md` for Claude Code; for
+Codex CLI, see this pack's `docs/install.md` Path C for the current verified plugin-root
+layout) in the pack's house format: frontmatter
+(`name`, trigger-rich `description`), imperative runbook, a "when NOT to use" note, and a
+"Provenance & maintenance" section whose re-verification commands were **actually run in
+this repo during discovery**. Ground-truth-only: a runbook step you could not verify here
+does not ship; label anything inferred.
 
 ## Phase 4 — Audit before scaffold
 
@@ -94,8 +98,9 @@ first:
    ledger, `{{evidence_dir}}` with its README + gitignore policy, and
    `templates/results-meta.schema.json` copied to the project's docs.
 3. Install the layout document (`templates/project-layout.md` → `docs/`, pruned to reality).
-4. For manual (non-plugin) installs, copy the pack's leaf skill folders into
-   `.claude/skills/` — flattened, per `docs/install.md`.
+4. For manual installs, copy the pack's leaf skill folders into the active harness's skill
+   directory — `.claude/skills/` for Claude Code, flattened; for Codex CLI, follow the
+   plugin-root layout in `docs/install.md` Path C.
 5. Commit only if the maintainer asks; report exactly what was created either way.
 
 ## Rules

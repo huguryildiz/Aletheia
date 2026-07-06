@@ -1,6 +1,7 @@
 ---
 name: numerical-determinism
-description: Use when the same code and same seed still produce different numbers — pinning thread counts, parallel reduction order, GPU kernels, and engine-level nondeterminism — and when a claim requires bit-reproducibility or a timing result requires hardware context. Also defines the hardware-context fields every run's meta file should record. Trigger phrases: "same seed different result", "pin the threads", "deterministic mode", "results differ across machines", "record the hardware", "timing needs the machine specs".
+description: >-
+  Use when the same code and same seed still produce different numbers — pinning thread counts, parallel reduction order, GPU kernels, and engine-level nondeterminism — and when a claim requires bit-reproducibility or a timing result requires hardware context. Also defines the hardware-context fields every run's meta file should record. Trigger phrases: "same seed different result", "pin the threads", "deterministic mode", "results differ across machines", "record the hardware", "timing needs the machine specs".
 tier: extended
 status: recommended
 ---

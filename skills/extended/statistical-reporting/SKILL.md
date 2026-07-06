@@ -1,6 +1,7 @@
 ---
 name: statistical-reporting
-description: Use when a numeric result is about to be reported, compared, or put in a paper — enforcing replication counts, uncertainty intervals, paired comparisons on matched instances, and visible denominators. Also use when designing how many runs a claim needs. Trigger phrases: "is this difference real", "how many replications", "report with confidence intervals", "single run result", "compare method A vs B", "is N=3 enough".
+description: >-
+  Use when a numeric result is about to be reported, compared, or put in a paper — enforcing replication counts, uncertainty intervals, paired comparisons on matched instances, and visible denominators. Also use when designing how many runs a claim needs. Trigger phrases: "is this difference real", "how many replications", "report with confidence intervals", "single run result", "compare method A vs B", "is N=3 enough".
 tier: extended
 status: recommended
 ---

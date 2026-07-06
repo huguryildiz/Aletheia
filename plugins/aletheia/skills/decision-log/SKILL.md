@@ -1,0 +1,1 @@
+../../../../skills/core/decision-log/SKILL.md

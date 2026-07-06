@@ -1,0 +1,1 @@
+../../../../skills/extended/external-positioning/SKILL.md

@@ -1,0 +1,1 @@
+../../../../skills/core/phase-gate/SKILL.md

@@ -1,6 +1,7 @@
 ---
 name: canonical-params
-description: Use when a change would touch the project's canonical operating point — the protected default parameter values that all results are reported against — or when a "let's just try X" probe risks editing a default instead of passing a script-level argument. Trigger phrases: "change the default", "try a different value", "tweak the operating point", "why is this parameter frozen", "can I edit the constants".
+description: >-
+  Use when a change would touch the project's canonical operating point — the protected default parameter values that all results are reported against — or when a "let's just try X" probe risks editing a default instead of passing a script-level argument. Trigger phrases: "change the default", "try a different value", "tweak the operating point", "why is this parameter frozen", "can I edit the constants".
 tier: core
 ---
 

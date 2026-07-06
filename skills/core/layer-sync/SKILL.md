@@ -1,6 +1,7 @@
 ---
 name: layer-sync
-description: Use when checking whether the project's knowledge layers agree — the decision log, the spec/docs, the code, and the notebooks/reports — after a decision lands, after a refactor, before a phase closes, or when the user asks "is there drift", "did that decision propagate", "are docs and code in sync". Also use to register an explicit doc-to-source anchor link for point-precise checking. Trigger phrases: "sync check", "drift audit", "is the spec up to date with the code", "did D-numbers propagate", "link this doc to this source file".
+description: >-
+  Use when checking whether the project's knowledge layers agree — the decision log, the spec/docs, the code, and the notebooks/reports — after a decision lands, after a refactor, before a phase closes, or when the user asks "is there drift", "did that decision propagate", "are docs and code in sync". Also use to register an explicit doc-to-source anchor link for point-precise checking. Trigger phrases: "sync check", "drift audit", "is the spec up to date with the code", "did D-numbers propagate", "link this doc to this source file".
 tier: core
 ---
 

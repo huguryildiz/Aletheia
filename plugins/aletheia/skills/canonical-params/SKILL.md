@@ -1,0 +1,1 @@
+../../../../skills/core/canonical-params/SKILL.md

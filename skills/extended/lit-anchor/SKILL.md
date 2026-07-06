@@ -1,6 +1,7 @@
 ---
 name: lit-anchor
-description: Use when assembling or adding to a bibliography, citing prior work, or making a novelty or absence claim — especially with AI assistance, which fabricates plausible-but-fake DOIs, titles, and authors. Governs DOI-verified, small-step literature anchoring so no unverified citation enters the record. Trigger phrases: "add a citation", "find references for", "cite prior work", "is this novel", "no one has done", "the literature says", "build the bibliography", "related work".
+description: >-
+  Use when assembling or adding to a bibliography, citing prior work, or making a novelty or absence claim — especially with AI assistance, which fabricates plausible-but-fake DOIs, titles, and authors. Governs DOI-verified, small-step literature anchoring so no unverified citation enters the record. Trigger phrases: "add a citation", "find references for", "cite prior work", "is this novel", "no one has done", "the literature says", "build the bibliography", "related work".
 tier: extended
 ---
 

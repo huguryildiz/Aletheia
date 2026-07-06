@@ -1,0 +1,20 @@
+{
+  "name": "aletheia",
+  "interface": {
+    "displayName": "Aletheia"
+  },
+  "plugins": [
+    {
+      "name": "aletheia",
+      "source": {
+        "source": "local",
+        "path": "./plugins/aletheia"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

@@ -40,15 +40,15 @@ before approval.
 ## 4. Markdown only
 
 The pack ships **discipline as instructions, not enforcement as scripts**. No Python, no
-shell, no executable hooks — the only non-markdown files are declarative data:
-`.claude-plugin/plugin.json` (manifest) and `templates/results-meta.schema.json` (a JSON
-Schema). Where mechanical enforcement is worth having (stop hooks for the correctness gate,
-pre-edit guards for canonical params), the skill *documents the pattern* and the adopter
-implements it in their own harness.
+shell, no executable hooks — non-markdown shipped files are limited to declarative
+manifests, marketplace catalogs, schema files, and image assets. Where
+mechanical enforcement is worth having (stop hooks for the correctness gate, pre-edit guards
+for canonical params), the skill *documents the pattern* and the adopter implements it in
+their own harness.
 
 *Why*: instructions are model- and harness-portable, auditable at a glance, and cannot
-acquire dependencies, platforms, or CVEs. Claude is the runtime — adoption is done by
-*invoking* the `skill-library-generator` skill, which scaffolds via file tools at
+acquire dependencies, platforms, or CVEs. The invoking agent is the runtime — adoption is
+done by *invoking* the `skill-library-generator` skill, which scaffolds via file tools at
 invocation time.
 
 *Forbids*: `bootstrap.sh`, `generator.py`, shipped hook scripts, vendored binaries.

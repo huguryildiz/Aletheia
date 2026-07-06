@@ -1,6 +1,7 @@
 ---
 name: negative-results-ledger
-description: Use when an idea, approach, or experiment fails, dead-ends, or gets abandoned — recording it in one line so it is never re-attempted from scratch and never silently buried. Also use when a negative or infeasibility result might itself be a finding, and when auditing a project for unrecorded dead ends. Trigger phrases: "that didn't work", "abandon this approach", "record the dead end", "why didn't we try X" , "we tried that before", "the result was negative".
+description: >-
+  Use when an idea, approach, or experiment fails, dead-ends, or gets abandoned — recording it in one line so it is never re-attempted from scratch and never silently buried. Also use when a negative or infeasibility result might itself be a finding, and when auditing a project for unrecorded dead ends. Trigger phrases: "that didn't work", "abandon this approach", "record the dead end", "why didn't we try X" , "we tried that before", "the result was negative".
 tier: extended
 status: recommended
 ---

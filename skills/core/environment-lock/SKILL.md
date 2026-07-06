@@ -1,6 +1,7 @@
 ---
 name: environment-lock
-description: Use when setting up or auditing a project's computational environment — pinning the interpreter, package versions, domain engines (solvers, simulators, training frameworks), and system libraries so a run is attributable to one resolvable environment. Also use before any campaign whose results will be kept, and when two machines disagree on a result. Trigger phrases: "pin the environment", "lockfile", "which versions produced this", "works on my machine", "set up reproducible deps", "environment drift".
+description: >-
+  Use when setting up or auditing a project's computational environment — pinning the interpreter, package versions, domain engines (solvers, simulators, training frameworks), and system libraries so a run is attributable to one resolvable environment. Also use before any campaign whose results will be kept, and when two machines disagree on a result. Trigger phrases: "pin the environment", "lockfile", "which versions produced this", "works on my machine", "set up reproducible deps", "environment drift".
 tier: core
 ---
 

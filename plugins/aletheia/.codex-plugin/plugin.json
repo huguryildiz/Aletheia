@@ -1,0 +1,27 @@
+{
+  "name": "aletheia",
+  "version": "0.1.0",
+  "description": "Operating discipline for rigorous, reproducible computational-science research: 18 portable skills, 3 read-only auditor procedures, and a generator meta-skill.",
+  "author": {
+    "name": "Huseyin Ugur Yildiz",
+    "url": "https://github.com/huguryildiz"
+  },
+  "homepage": "https://github.com/huguryildiz/Aletheia",
+  "repository": "https://github.com/huguryildiz/Aletheia",
+  "keywords": ["research", "reproducibility", "computational-science", "research-ops", "skills"],
+  "interface": {
+    "displayName": "Aletheia",
+    "shortDescription": "Operating discipline for reproducible computational-science research.",
+    "longDescription": "Markdown-only Agent Skills pack for evidence, decisions, correctness gates, provenance, reproducibility, and read-only audits.",
+    "developerName": "Huseyin Ugur Yildiz",
+    "category": "Productivity",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://github.com/huguryildiz/Aletheia",
+    "defaultPrompt": [
+      "Adopt Aletheia in this repository.",
+      "Run the correctness gate before marking this done.",
+      "Audit this claim with Aletheia's verifier."
+    ],
+    "brandColor": "#0B1220"
+  }
+}

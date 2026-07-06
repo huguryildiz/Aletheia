@@ -1,6 +1,7 @@
 ---
 name: notebook-vs-script
-description: Use when deciding where a piece of computational work belongs — an exploratory one-off versus a reusable pipeline versus library code — and when maintaining the notebook series (numbering, manifest, execute-before-commit) or promoting a notebook into a script. Trigger phrases: "notebook or script", "where does this analysis go", "let's just check this number", "make this rerunnable", "the notebook is stale", "promote this to a script".
+description: >-
+  Use when deciding where a piece of computational work belongs — an exploratory one-off versus a reusable pipeline versus library code — and when maintaining the notebook series (numbering, manifest, execute-before-commit) or promoting a notebook into a script. Trigger phrases: "notebook or script", "where does this analysis go", "let's just check this number", "make this rerunnable", "the notebook is stale", "promote this to a script".
 tier: extended
 status: recommended
 ---

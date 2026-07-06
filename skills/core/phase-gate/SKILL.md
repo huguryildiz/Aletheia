@@ -1,6 +1,7 @@
 ---
 name: phase-gate
-description: Use when closing a project phase or milestone gate — the user believes the phase's acceptance criteria are met and wants it closed formally, with evidence verified item by item. Runs the closure ritual in strict order and blocks on any open item. Trigger phrases: "close the phase", "close the gate", "is the phase done", "phase-gate check", "milestone closure", "can we call this phase complete".
+description: >-
+  Use when closing a project phase or milestone gate — the user believes the phase's acceptance criteria are met and wants it closed formally, with evidence verified item by item. Runs the closure ritual in strict order and blocks on any open item. Trigger phrases: "close the phase", "close the gate", "is the phase done", "phase-gate check", "milestone closure", "can we call this phase complete".
 tier: core
 ---
 

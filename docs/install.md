@@ -1,7 +1,8 @@
 # Installing Aletheia
 
-Two supported paths: as a **Claude Code plugin** (recommended — skills stay updatable and
-namespaced) or as a **plain template** copied into your project's `.claude/` directory
+Three supported paths: as a **Claude Code plugin** (recommended for Claude Code — skills
+stay updatable and namespaced), as a **plain template** copied into your project's
+`.claude/` directory, or through **Codex's native plugin marketplace flow**
 (harness-portable — the pack is markdown-only by design).
 
 ## Path A — Claude Code plugin
@@ -64,11 +65,52 @@ Result: `.claude/skills/correctness-gate/SKILL.md` etc. — each leaf directly u
 `skills/`. Skill names do not change (they come from frontmatter); only the namespace
 prefix is absent compared to the plugin path.
 
-## After either path
+## Path C — Codex CLI plugin
 
-1. Open your project in Claude and invoke the **`skill-library-generator`** skill — it
-   interviews you, fills the config block in your `CLAUDE.md`, and scaffolds the record
-   surfaces. (Or hand-fill from `templates/CLAUDE.md`.)
+Codex's plugin format needs its own plugin root — a repository root cannot double as both
+the Claude Code plugin root (`skills/core/`, `skills/extended/`, two levels deep) and a
+Codex plugin root, because Codex's default `<plugin-root>/skills/*/SKILL.md` scan is
+additive to (not replaced by) anything declared in `plugin.json`, and it would find
+`skills/core` and `skills/extended` and fail validation since neither holds a `SKILL.md`
+directly. So Aletheia gives Codex a separate plugin root:
+
+- `plugins/aletheia/.codex-plugin/plugin.json` — plugin manifest, rooted at
+  `plugins/aletheia/` instead of the repository root.
+- `plugins/aletheia/skills/<name>/SKILL.md` — flattened Agent Skills surface (19 skills +
+  3 former agents), implemented as symlinks to the canonical markdown sources under
+  `skills/` and `agents/` — single source, no generated copies.
+- `.agents/plugins/marketplace.json` — repo marketplace catalog; its plugin entry points
+  at `./plugins/aletheia`.
+
+Verified against OpenAI's own `plugin-creator` skill and its `validate_plugin.py`:
+`python3 <path-to>/plugin-creator/scripts/validate_plugin.py plugins/aletheia` passes.
+
+Add the marketplace from GitHub:
+
+```bash
+codex plugin marketplace add huguryildiz/Aletheia
+codex plugin add aletheia@aletheia
+```
+
+Or test a local checkout:
+
+```bash
+codex plugin marketplace add ./aletheia
+codex plugin add aletheia@aletheia
+```
+
+Bundled skills load namespaced by the plugin (`aletheia:correctness-gate`,
+`aletheia:verifier`, etc.). There is no zero-install path for Codex the way Claude Code's
+`--plugin-url` gives a single-session try: a live check with `codex debug prompt-input`
+found no repo-scoped `.agents/skills` auto-discovery in this Codex CLI build, so the
+marketplace-and-install flow above is the only verified route.
+
+## After any path
+
+1. Open your project in the target agent runtime and invoke the
+   **`skill-library-generator`** skill — it interviews you, fills the config block in your
+   `CLAUDE.md`, and scaffolds the record surfaces. (Or hand-fill from
+   `templates/CLAUDE.md`.)
 2. The skills resolve their `{{placeholder}}` references from that config block; without
    it they will ask rather than guess.
 

@@ -1,0 +1,1 @@
+../../../../skills/skill-library-generator/SKILL.md

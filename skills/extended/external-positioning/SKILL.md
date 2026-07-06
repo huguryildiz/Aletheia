@@ -1,6 +1,7 @@
 ---
 name: external-positioning
-description: Use when a claim is about to face the outside world — classifying what is novel versus known, verifying every citation actually exists and says what it is cited for, scoping claims to what the evidence supports, and holding the reproducibility bar before anything enters a draft. Trigger phrases: "is this novel", "position against the literature", "check the citations", "are we over-claiming", "ready for submission", "what's our contribution".
+description: >-
+  Use when a claim is about to face the outside world — classifying what is novel versus known, verifying every citation actually exists and says what it is cited for, scoping claims to what the evidence supports, and holding the reproducibility bar before anything enters a draft. Trigger phrases: "is this novel", "position against the literature", "check the citations", "are we over-claiming", "ready for submission", "what's our contribution".
 tier: extended
 status: recommended
 ---

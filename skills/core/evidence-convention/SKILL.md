@@ -1,6 +1,7 @@
 ---
 name: evidence-convention
-description: Use when launching any computational campaign whose results will be kept, cited, or decided upon — sweeps, batch runs, Monte Carlo draws, precomputes — and when auditing for "dark runs" (results that exist only in caches, scratch dirs, or chat logs). Defines where evidence lands and what a run must record. Trigger phrases: "where do the results go", "record this run", "write the meta file", "dark run", "promote these results", "run report".
+description: >-
+  Use when launching any computational campaign whose results will be kept, cited, or decided upon — sweeps, batch runs, Monte Carlo draws, precomputes — and when auditing for "dark runs" (results that exist only in caches, scratch dirs, or chat logs). Defines where evidence lands and what a run must record. Trigger phrases: "where do the results go", "record this run", "write the meta file", "dark run", "promote these results", "run report".
 tier: core
 ---
 

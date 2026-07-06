@@ -1,6 +1,7 @@
 ---
 name: correctness-gate
-description: Use when a change touches any critical module — the modules whose silent breakage would corrupt the project's results — before claiming the change is done, ready, or working. Also use when the named gate test goes red and the bug-or-intentional-change call must be made. Trigger phrases: "run the gate", "is the correctness gate green", "I changed the core model", "the gate is red", "can I say this is done", "update the gate tolerance".
+description: >-
+  Use when a change touches any critical module — the modules whose silent breakage would corrupt the project's results — before claiming the change is done, ready, or working. Also use when the named gate test goes red and the bug-or-intentional-change call must be made. Trigger phrases: "run the gate", "is the correctness gate green", "I changed the core model", "the gate is red", "can I say this is done", "update the gate tolerance".
 tier: core
 ---
 

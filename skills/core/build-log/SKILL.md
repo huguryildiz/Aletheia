@@ -1,6 +1,7 @@
 ---
 name: build-log
-description: Use when a phase completes or a sanity-gate result is being fixed as permanent evidence — writing a new numbered entry under the build-log directory. The bar is high; single-module additions and small changes do not get entries. Trigger phrases: "phase N is done, log it", "the gate passed, record it", "write a build log entry", "completion note", "fix this result as evidence".
+description: >-
+  Use when a phase completes or a sanity-gate result is being fixed as permanent evidence — writing a new numbered entry under the build-log directory. The bar is high; single-module additions and small changes do not get entries. Trigger phrases: "phase N is done, log it", "the gate passed, record it", "write a build log entry", "completion note", "fix this result as evidence".
 tier: core
 ---
 

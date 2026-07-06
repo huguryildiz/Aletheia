@@ -1,6 +1,7 @@
 ---
 name: decision-log
-description: Use when a project decision is made or changed — a modeling assumption, a default value, a method choice, a scope cut, a rejected alternative — and it must be recorded as a numbered ADR-lite entry, or when an existing decision is superseded, or when the user asks "why did we choose X" / "is there a decision for this". Trigger phrases: "record this decision", "write an ADR", "add a D-number", "supersede D12", "why is this the default", "log the rationale".
+description: >-
+  Use when a project decision is made or changed — a modeling assumption, a default value, a method choice, a scope cut, a rejected alternative — and it must be recorded as a numbered ADR-lite entry, or when an existing decision is superseded, or when the user asks "why did we choose X" / "is there a decision for this". Trigger phrases: "record this decision", "write an ADR", "add a D-number", "supersede D12", "why is this the default", "log the rationale".
 tier: core
 ---
 
