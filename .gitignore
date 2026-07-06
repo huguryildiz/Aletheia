@@ -7,3 +7,12 @@ Thumbs.db
 *~
 .idea/
 .vscode/
+
+# Announcement drafts (not part of the shipped pack)
+announcements/
+
+# Local audit reports (not part of the shipped pack)
+audit/
+
+# Local specs/plans (not part of the shipped pack)
+.claude/
