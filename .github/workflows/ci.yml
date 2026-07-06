@@ -20,6 +20,7 @@ jobs:
 
       - name: Relative markdown links resolve
         run: |
+          set +e
           set -uo pipefail
           fail=0
           while IFS= read -r md; do
