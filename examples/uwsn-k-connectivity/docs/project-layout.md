@@ -5,9 +5,11 @@ Pruned to reality (`project-layout` template). A single-model example, not a pac
 ```text
 uwsn-k-connectivity/
 ├── model.py              # constants → topology → MILP → solve → export (critical module)
+├── plot.py               # draw the network + routing from solutions.csv → network.svg
 ├── requirements.txt      # gurobipy pin (env_manifest)
 ├── solutions.csv         # one illustrative optimal routing (i,j,k,l,val)
 ├── baseline.json         # the gated invariant: objective tau
+├── network.svg / .png    # rendered routing figure (regenerable via plot.py)
 ├── README.md             # what this is + how to run/gate
 ├── CLAUDE.md             # Aletheia config block + operating rules
 ├── docs/

@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 940 340" font-family="-apple-system, Segoe UI, Roboto, sans-serif">
+  <style>
+    .title { font-size: 15px; font-weight: 700; fill: #111; }
+    .h    { font-size: 13px; font-weight: 700; }
+    .t    { font-size: 11px; fill: #333; }
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: 10.5px; }
+    .bad  { fill: #b91c1c; }
+    .good { fill: #15803d; }
+    .muted{ fill: #666; }
+    @media (prefers-color-scheme: dark) {
+      .title,.h { fill: #f3f4f6; } .t { fill: #cbd5e1; } .muted { fill: #94a3b8; }
+    }
+  </style>
+
+  <text x="20" y="28" class="title">Adopting Aletheia on the UWSN k-connectivity repo</text>
+
+  <!-- BEFORE panel -->
+  <rect x="20" y="48" width="250" height="260" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
+  <text x="36" y="74" class="h bad">BEFORE — raw repo</text>
+  <text x="36" y="98"  class="mono bad">Model/VariableK_MR.py (30 nodes)</text>
+  <text x="36" y="116" class="mono">plot_k1.m  plot_k3.m  …</text>
+  <text x="36" y="134" class="mono">solutions_k*.csv  (~1.0 vals)</text>
+  <text x="36" y="152" class="mono">Results-2024-09-15/  …</text>
+  <text x="36" y="170" class="mono muted">testplot_v1.m  (stale)</text>
+  <text x="36" y="196" class="t bad">✗ no test / no gate</text>
+  <text x="36" y="214" class="t bad">✗ no env pin, no README</text>
+  <text x="36" y="232" class="t bad">✗ CSV export step missing</text>
+  <text x="36" y="250" class="t bad">✗ needs MATLAB + Gurobi</text>
+  <text x="36" y="286" class="t muted">→ can't reproduce its own results</text>
+
+  <!-- ARROW / generator -->
+  <g>
+    <rect x="300" y="120" width="140" height="120" rx="10" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+    <text x="370" y="142" class="h" text-anchor="middle" fill="#1d4ed8">Aletheia</text>
+    <text x="370" y="162" class="t" text-anchor="middle">discover →</text>
+    <text x="370" y="180" class="t" text-anchor="middle">interview →</text>
+    <text x="370" y="198" class="t" text-anchor="middle">decide →</text>
+    <text x="370" y="216" class="t" text-anchor="middle">scaffold</text>
+    <path d="M270 180 L300 180" stroke="#1d4ed8" stroke-width="2" marker-end="url(#a)"/>
+    <path d="M440 180 L470 180" stroke="#15803d" stroke-width="2" marker-end="url(#a)"/>
+  </g>
+
+  <!-- AFTER panel -->
+  <rect x="470" y="48" width="450" height="260" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="486" y="74" class="h good">AFTER — clean subject + real gate</text>
+  <text x="486" y="98"  class="mono good">model.py (13 nodes, non-uniform k)</text>
+  <text x="486" y="116" class="mono">solutions.csv  (real flows 1–1440)</text>
+  <text x="486" y="134" class="mono">baseline.json  → τ = 49052.18</text>
+  <text x="486" y="152" class="mono">requirements.txt · CLAUDE.md · docs/</text>
+  <text x="486" y="178" class="t good">✓ gate: <tspan class="mono">python3 model.py --check</tspan></text>
+  <text x="486" y="196" class="t good">✓ decisions D01/D02, results/meta.json</text>
+  <text x="486" y="214" class="t good">✓ env pinned; honest arch note (Rosetta)</text>
+  <text x="486" y="232" class="t good">✓ gates the invariant τ, not the routing</text>
+  <rect x="486" y="252" width="418" height="42" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+  <text x="500" y="278" class="mono good">$ python3 model.py --check → GATE PASS (τ matches, rc=0)</text>
+  <defs>
+    <marker id="a" markerWidth="9" markerHeight="9" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L7,3 L0,6 Z" fill="#15803d"/>
+    </marker>
+  </defs>
+</svg>

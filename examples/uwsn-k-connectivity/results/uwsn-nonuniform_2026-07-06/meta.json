@@ -6,7 +6,7 @@
   "scripts": [
     {
       "path": "model.py",
-      "sha256": "162ffbafd235656fc2891cb5a82ff93c0f6e05cf75e801e61afc81bedd218283",
+      "sha256": "1892e59d29be197d06661a77781bade9fe313792f9c86fdc9781d5b5d77df985",
       "args": "python3 model.py"
     }
   ],

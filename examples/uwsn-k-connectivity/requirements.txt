@@ -1,3 +1,5 @@
 # Solver: Gurobi (commercial; free academic license). Pinned to the tested major line.
 # Verified in this repo with gurobipy 9.5.1 under an academic license.
 gurobipy>=9.5,<10
+# Plotting only (plot.py) — not needed for the model or the gate.
+matplotlib>=3.5

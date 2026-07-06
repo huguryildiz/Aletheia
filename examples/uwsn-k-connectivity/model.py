@@ -82,13 +82,12 @@ BASE_POSITIONS = [(DX / 2, DY / 2, 0), (DX / 2, -DY / 2, 0),
 
 
 # ============================ TOPOLOGY ============================
-def build_topology(seed):
+def node_positions(seed):
     """Place the base station at a random corner and sensors uniformly in the prism.
-    Returns node coordinates, pairwise distances D (m), the link set A, per-link
-    transmit energy E_t_link, and the interference tensor."""
+    Returns (xs, ys, zs) in km. Same RNG sequence build_topology uses, exposed so a
+    plotter can draw the exact instance the solver ran on."""
     random.seed(seed)
     base = BASE_POSITIONS[random.randint(0, 3)]
-
     xs, ys, zs = [], [], []
     for i in V:
         if i == 0:
@@ -98,6 +97,13 @@ def build_topology(seed):
             y = random.uniform(-DY / 2, DY / 2)
             z = random.uniform(-DZ, 0)
         xs.append(x); ys.append(y); zs.append(z)
+    return xs, ys, zs
+
+
+def build_topology(seed):
+    """Place nodes, then derive pairwise distances D (m), the link set A, per-link
+    transmit energy E_t_link, and the interference tensor."""
+    xs, ys, zs = node_positions(seed)
 
     # distances in metres
     D = {(i, j): 1000 * math.sqrt((xs[i] - xs[j]) ** 2

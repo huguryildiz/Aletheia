@@ -13,12 +13,25 @@ correctness gate are added so it runs end-to-end quickly and reproducibly.
 This is the subject repo of Aletheia's end-to-end adoption example — see
 [`../adoption-transcript.md`](../adoption-transcript.md) and `CLAUDE.md` here.
 
+## Adoption at a glance
+
+![Adoption flow: messy raw repo → Aletheia (discover/interview/decide/scaffold) → clean subject with a real gate](docs/adoption-flow.svg)
+
+## The routing solution
+
+`python3 plot.py` regenerates this figure from `solutions.csv` (echoes the paper's own
+network figure): base station (★), critical sources (red, k=2) and ordinary sources
+(orange, k=1), with data-flow edges coloured by path.
+
+![UWSN routing solution: base station at a corner, 12 sensor nodes, flow arrows converging to the base station](network.svg)
+
 ## Run
 
 ```bash
 pip install -r requirements.txt          # needs a Gurobi license (free for academics)
 python3 model.py                         # solve → write solutions.csv + baseline.json
 python3 model.py --check                 # the gate: re-solve, compare tau to baseline
+python3 plot.py                          # draw network.svg / network.png from solutions.csv
 ```
 
 - `model.py` — constants at the top, then topology → MILP → solve → export.
