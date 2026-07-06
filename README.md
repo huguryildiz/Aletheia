@@ -41,7 +41,11 @@ ceremony.
 </p>
 
 <p align="center">
-  <sub>A <strong>real</strong> case (<a href="examples/a2g-pathloss-3gpp.md">worked out here</a>): an AI mixed 3GPP scenario parameters — surface-correct, a 10 dB error — and is held at the gate until every coefficient is traced to one scenario and one spec table.</sub>
+  <sub>A <strong>real</strong> case (<a href="examples/a2g-pathloss-3gpp.md">worked out here</a> · <a href="https://claude.ai/code/artifact/83f5395e-a984-4391-85b7-18c8056ec7a6">animated version</a>): an AI mixed 3GPP scenario parameters — surface-correct, a 10 dB error — and is held at the gate until every coefficient is traced to one scenario and one spec table.</sub>
+</p>
+
+<p align="center">
+  <sub>A second <strong>real</strong> case (<a href="examples/monte-carlo-pi.md">worked out here</a> · <a href="https://claude.ai/code/artifact/5bfcc9ae-2530-47d3-b5ce-fcd938d31238">animated version</a>): one lucky Monte-Carlo run claimed π to ±1×10⁻⁴; the 20 recorded runs scatter 30× wider (95% CI ±8.9×10⁻⁴), and the gate holds the claim until the interval is reported and the seed logged.</sub>
 </p>
 
 ## Motivation
