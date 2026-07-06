@@ -8,12 +8,6 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/markdown--only-no%20executable%20code-0b1220?style=for-the-badge&logo=markdown&logoColor=white" alt="Markdown only">
-  <img src="https://img.shields.io/badge/Agent%20Skills-standard-0b1220?style=for-the-badge" alt="Agent Skills standard">
-  <img src="https://img.shields.io/badge/disciplines-18-0b1220?style=for-the-badge&logo=academia&logoColor=white" alt="18 disciplines">
-</p>
-
-<p align="center">
   <em>ἀλήθεια — “disclosure; the state of not being hidden.”</em>
 </p>
 
