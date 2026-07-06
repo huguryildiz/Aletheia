@@ -64,5 +64,5 @@ failing.
 Re-run the generator quarterly (or after any painful incident) in harvest mode: "what kept
 going wrong that deserves a skill?" The pack's own history is the precedent — it was mined
 from the accumulated working conventions of one real research repository; see
-[../examples/uwsn-ankc.md](../examples/uwsn-ankc.md) for that mapping, including how each
+[the examples gallery](../examples/) for that mapping, including how each
 shipped skill traces to a concrete practice.

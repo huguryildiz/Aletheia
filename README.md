@@ -11,7 +11,7 @@ which makes it model- and harness-portable by construction.
 
 The pack was **mined from one real research project** (an underwater sensor-network
 optimization effort targeting a journal paper — see
-[examples/uwsn-ankc.md](examples/uwsn-ankc.md)), generalized until it reads naturally in
+[examples gallery](examples/)), generalized until it reads naturally in
 any computational domain — molecular dynamics, climate modeling, bioinformatics, ML
 training — and stress-tested against that bar. Domain content lives in exactly one file:
 the example.
@@ -95,7 +95,7 @@ tier semantics + work-type routing: [docs/core-vs-extended.md](docs/core-vs-exte
 
 ```text
 skills/core/…  skills/extended/…  skills/skill-library-generator/
-agents/        templates/         docs/          examples/uwsn-ankc.md
+agents/        templates/         docs/          examples/
 .claude-plugin/plugin.json        LICENSE (MIT)
 ```
 

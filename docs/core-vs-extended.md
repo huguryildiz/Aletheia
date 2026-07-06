@@ -54,4 +54,4 @@ small change into bureaucracy.**
 claim refutation). All strictly read-only reporters: they write nothing; log/decision
 writing is a *skill* action in the main session. Writer agents (runners, implementers) are
 deliberately out of scope — execution automation is project-specific workflow; the generic
-patterns are documented in [../examples/uwsn-ankc.md](../examples/uwsn-ankc.md).
+patterns are documented in [the examples gallery](../examples/).

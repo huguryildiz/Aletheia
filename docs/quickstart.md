@@ -49,4 +49,4 @@ The first closure is the moment the discipline pays for itself.
 - Full adoption walkthrough: [adopting-in-a-new-project.md](adopting-in-a-new-project.md)
 - What ships and why: [core-vs-extended.md](core-vs-extended.md),
   [design-principles.md](design-principles.md)
-- The worked exemplar the pack was mined from: [../examples/uwsn-ankc.md](../examples/uwsn-ankc.md)
+- Worked examples across domains: [../examples/](../examples/)

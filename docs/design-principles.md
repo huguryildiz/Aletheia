@@ -55,17 +55,18 @@ invocation time.
 
 ## The portability bar
 
-Domain content lives in **exactly one file**: [../examples/uwsn-ankc.md](../examples/uwsn-ankc.md).
+Domain content lives only in `examples/` — fictional worked examples, never in `skills/` or `templates/`.
 Skills and templates must read naturally in a domain that has no solver at all — the pack is
 stress-tested against foreign domains (e.g. molecular dynamics, climate modeling,
-bioinformatics, ML training), and any skill that only makes sense next to an optimization
-model gets demoted to the examples file.
+bioinformatics, ML training), and any skill that only makes sense next to one specific
+solver or model gets demoted to the examples file.
 
 Mechanical gate, run before every release (must return zero matches):
 
 ```bash
-grep -ri "bellhop\|milp\|kappa\|acoustic\|uwsn\|gurobi\|cp-sat" skills templates
+grep -riE "<your project's domain vocabulary — solver names, model terms, place names>" skills templates
 ```
 
-Consequence: skills and templates refer to the exemplar namelessly ("see the pack's
-`examples/` directory") — only the README and `docs/` may link it by name.
+Consequence: skills and templates name no domain and no example file — they point to worked
+examples only as "see the pack's `examples/` directory". Concrete domain vocabulary lives
+solely in `examples/` (fictional illustrations).
