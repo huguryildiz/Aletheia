@@ -76,9 +76,9 @@ directly. So Aletheia gives Codex a separate plugin root:
 
 - `plugins/aletheia/.codex-plugin/plugin.json` — plugin manifest, rooted at
   `plugins/aletheia/` instead of the repository root.
-- `plugins/aletheia/skills/<name>/SKILL.md` — flattened Agent Skills surface (19 skills +
-  3 former agents), implemented as symlinks to the canonical markdown sources under
-  `skills/` and `agents/` — single source, no generated copies.
+- `plugins/aletheia/skills/<name>/SKILL.md` — flattened Agent Skills surface (14 skills +
+  1 generator + 3 former agents = 18 symlinks), implemented as symlinks to the canonical
+  markdown sources under `skills/` and `agents/` — single source, no generated copies.
 - `.agents/plugins/marketplace.json` — repo marketplace catalog; its plugin entry points
   at `./plugins/aletheia`.
 
@@ -104,6 +104,24 @@ Bundled skills load namespaced by the plugin (`aletheia:correctness-gate`,
 `--plugin-url` gives a single-session try: a live check with `codex debug prompt-input`
 found no repo-scoped `.agents/skills` auto-discovery in this Codex CLI build, so the
 marketplace-and-install flow above is the only verified route.
+
+### Windows / symlink note (Paths B & C)
+
+The Codex surface under `plugins/aletheia/skills/` is **relative symlinks**. A Windows
+checkout made *without* developer mode or `git config core.symlinks true` does not
+materialize them as links — each `SKILL.md` lands as a small text file whose contents are a
+path string (e.g. `../../../../skills/core/correctness-gate/SKILL.md`), not the skill body,
+and the agent runtime reads that literal path text instead of the discipline.
+
+Fallback — **copy the sources, not the symlink surface**: use Path B's `cp -R` flatten,
+which copies the real `skills/…/SKILL.md` bodies into `.claude/skills/` and never touches
+the symlink layer. Equivalently, resolve links on copy (`cp -RL` / `git config --global
+core.symlinks true` before cloning). Verify a copied skill is real content, not a one-line
+path, before relying on it:
+
+```bash
+head -1 .claude/skills/correctness-gate/SKILL.md   # expect "---" (frontmatter), not a "../.." path
+```
 
 ## After any path
 
