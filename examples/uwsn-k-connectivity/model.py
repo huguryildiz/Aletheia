@@ -5,11 +5,12 @@ Non-uniform k-connectivity routing for an underwater sensor network (UWSN).
 
 Faithful, reduced (small-topology) reimplementation of the THEDN energy-minimization
 MILP behind "Mitigating Energy Cost of Connection Reliability in UWSNs Through
-Non-Uniform k-Connectivity" (IEEE doc 11143186). The physics (Thorp acoustic
-absorption, distance-tiered transmit energy, node-disjoint multi-path routing,
-interference-aware bandwidth) is preserved from the original Model/VariableK_MR.py;
-only the node count is reduced and a fixed seed + a solution CSV export are added so
-the model runs end-to-end quickly and reproducibly.
+Non-Uniform k-Connectivity" (IEEE doc 11143186):
+    https://ieeexplore.ieee.org/abstract/document/11143186
+The physics (Thorp acoustic absorption, distance-tiered transmit energy, node-disjoint
+multi-path routing, interference-aware bandwidth) is preserved from the original
+Model/VariableK_MR.py; only the node count is reduced and a fixed seed + a solution CSV
+export are added so the model runs end-to-end quickly and reproducibly.
 
 Run:  python3 model.py        ->  writes solutions.csv (columns: i,j,k,l,val)
 """

@@ -17,14 +17,12 @@ solver is the load-bearing machinery — so a solver bug, an unconverged grid, o
 | `project-layout` | `src/` solver + `cases/` (equilibria, geometries); gitignored bulk `output/` field data with tracked READMEs; HPC job scripts in `jobs/` |
 | `correctness-gate` | Critical module = the PDE solver kernel. Gate = an analytic linear-growth-rate benchmark + a published verification case reproduced within tolerance |
 | `canonical-params` | Grid resolution, timestep (CFL limit), boundary conditions, and collision model are frozen; changed only inside a convergence study or sweep |
-| `environment-lock` | Pinned compiler + MPI + GPU stack and numerical libraries; cluster module versions recorded per run |
-| `data-fingerprint` | SHA-256 of the equilibrium/geometry input and the run config in `meta.json` |
+| `run-provenance` | Pinned compiler + MPI + GPU stack and numerical libraries with cluster module versions recorded per run; SHA-256 of the equilibrium/geometry input and the run config; the seed logged for any Monte-Carlo collision component — all in `meta.json` |
 | `evidence-convention` | Each run lands in `results/<name>_<date>/` with diagnostics + `meta.json`; large fields are hashed and registered, never left as dark output |
-| `reproducibility-provenance` | Seed logged for any Monte-Carlo collision component; every flux figure regenerates by one command from the diagnostics |
 | `numerical-determinism` | MPI reduction-order and GPU-atomic nondeterminism documented; a convergence-under-refinement study accompanies every production claim |
 | `statistical-reporting` | Time-averaged fluxes reported with error bars from block averaging over the saturated turbulent state; never a single snapshot |
 | `negative-results-ledger` | Numerically unstable parameter regimes are recorded so they aren't rediscovered the hard way |
-| `external-positioning` | Transport predictions framed against experimental discharges and code-comparison projects before any headline claim |
+| `external-positioning` | Transport predictions framed against experimental discharges and code-comparison projects before any headline claim; every flux figure regenerates by one command from the diagnostics |
 
 ## Signature discipline here
 

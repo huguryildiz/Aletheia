@@ -16,10 +16,10 @@ One run, a nice-looking number, ready to report.
 
 | Hidden | Why it is real in *this* problem | Discipline |
 |---|---|---|
-| seed unlogged | the estimate genuinely changes with the seed | `reproducibility-provenance` |
+| seed unlogged | the estimate genuinely changes with the seed | `run-provenance` |
 | one run reported | the estimate has real variance → needs replication + an interval | `statistical-reporting` |
 | precision over-claimed | "1e-4" was asserted; the run's actual error is **8.4e-4** | `correctness-gate` |
-| figure can't regenerate | the convergence plot must rebuild from the recorded seeds | `reproducibility-provenance` |
+| figure can't regenerate | the convergence plot must rebuild from the recorded seeds | `external-positioning` |
 
 ## What it actually does — real run
 
@@ -49,9 +49,10 @@ not 10⁻⁴. You cannot assert 1e-4 from this data.
 
 ## How Aletheia holds it at the gate
 
-- **[`reproducibility-provenance`](../skills/extended/reproducibility-provenance/SKILL.md)** — no
+- **[`run-provenance`](../skills/core/run-provenance/SKILL.md)** — no
   seed, no result. Seeds `42` and `0..19` are recorded so every number above is re-derivable, and
-  the convergence figure regenerates from them with one command.
+  the convergence figure regenerates from them with one command (the figure-regeneration bar
+  itself is held by `external-positioning`).
 - **[`statistical-reporting`](../skills/extended/statistical-reporting/SKILL.md)** — never a single
   run. The claim must carry a replication count, a mean, an interval, and a visible denominator
   (20 runs × 10⁶ draws), not one lucky point.

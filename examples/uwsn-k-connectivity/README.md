@@ -4,7 +4,8 @@ A single-file, runnable MILP that computes energy-minimizing, **non-uniform
 k-connected** routing for an underwater sensor network (UWSN). It is a faithful,
 reduced reimplementation of the model behind the published paper "Mitigating Energy
 Cost of Connection Reliability in UWSNs Through Non-Uniform k-Connectivity"
-(IEEE doc 11143186) — the physics (Thorp acoustic absorption, distance-tiered transmit
+([IEEE doc 11143186](https://ieeexplore.ieee.org/abstract/document/11143186)) — the
+physics (Thorp acoustic absorption, distance-tiered transmit
 energy, node-disjoint multi-path routing, interference-aware bandwidth) is preserved;
 the topology is reduced to 13 nodes and a fixed seed + a solution export + a fast
 correctness gate are added so it runs end-to-end quickly and reproducibly.

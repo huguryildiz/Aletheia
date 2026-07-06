@@ -1,0 +1,37 @@
+{
+  "task": "Canonical solve of the non-uniform k-connectivity MILP (model.py) at the committed operating point, during Aletheia adoption. Executes docs/decisions.md D02.",
+  "status": "COMPLETE",
+  "git_commit": "40364c9901b83486a464186801dfd94bc83ac8f4",
+  "git_tree_clean_at_launch": false,
+  "scripts": [
+    {
+      "path": "model.py",
+      "sha256": "162ffbafd235656fc2891cb5a82ff93c0f6e05cf75e801e61afc81bedd218283",
+      "args": "python3 model.py"
+    }
+  ],
+  "parameters": {
+    "nodes": 13,
+    "seed": 6,
+    "k_high": 2,
+    "k_low": 1,
+    "rate": 0.5,
+    "n_paths": 3,
+    "n_rounds": 1440
+  },
+  "environment": {
+    "interpreter_version": "3.9.20",
+    "arch": "x86_64",
+    "arch_native_verified": false,
+    "engines": { "gurobi": "9.5.1" }
+  },
+  "seeds": {
+    "base_seed": 6,
+    "derivation": "single fixed seed for topology placement (random.seed(SEED))",
+    "rng": "python random"
+  },
+  "expectation": "Written before the solve: the instance is feasible and yields a single finite objective tau (max per-node energy); tau is reproducible across processes while the exact routing is not.",
+  "outputs": ["solutions.csv", "baseline.json"],
+  "results": { "tau": 49052.184769, "status": "OPTIMAL", "mip_gap_target": 0.05 },
+  "provenance_note": "Genuine run (not retroactive). git_tree_clean_at_launch is false because model.py and this scaffold were uncommitted when the solve ran; the script's sha256 pins the exact model version. arch_native_verified is false: the interpreter is x86_64 under Rosetta on Apple Silicon, not native arm64 — recorded honestly per run-provenance/numerical-determinism rather than omitted. solutions.csv is one optimal routing among several; tau is the gated invariant."
+}

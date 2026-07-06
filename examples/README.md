@@ -6,22 +6,21 @@ below are **fictional** — illustrations, not real repositories. One is real (s
 The pack's Core was harvested from, and its Extended tier stress-tested against, a real
 computational-research repository — underwater sensor network (UWSN) k-connectivity
 optimization, behind a **published** paper (IEEE doc 11143186). Because it is published, it is
-named and reproduced below (`uwsn-k-connectivity/`); no skill or template contains a domain
-term regardless — the portability gate (`grep` over `skills/` and `templates/` for domain
+named below and a faithful reduced reimplementation ships as `uwsn-k-connectivity/`; no skill
+or template contains a domain term regardless — the portability gate (`grep` over `skills/` and `templates/` for domain
 vocabulary must return zero) enforces this by construction, independent of what `examples/`
 shows.
 
 ## Real worked example
 
 Three pages are **not** fictional. Each reproduces an actual failure mode with real numbers from
-a script that was run, and shows the gate catching it (or, for the third, honestly names where
-no fast gate exists).
+a script that was run, and shows the gate catching it.
 
 | Example | Domain | Signature skill it spotlights |
 |---|---|---|
 | [A2G path-loss parameter mismatch (real)](a2g-pathloss-3gpp.md) | Wireless / telecom | `correctness-gate` + `canonical-params` + `lit-anchor` |
-| [Monte Carlo π — lucky run, over-claimed precision (real)](monte-carlo-pi.md) | Numerical / stats | `statistical-reporting` + `reproducibility-provenance` + `correctness-gate` |
-| [UWSN k-connectivity — real generator adoption (real)](adoption-transcript.md) | Wireless sensor networks | full `skill-library-generator` run; first end-to-end adoption on a public, non-exemplar repo |
+| [Monte Carlo π — lucky run, over-claimed precision (real)](monte-carlo-pi.md) | Numerical / stats | `statistical-reporting` + `run-provenance` + `correctness-gate` |
+| [UWSN non-uniform k-connectivity — end-to-end generator adoption (real)](adoption-transcript.md) | Wireless sensor networks | full `skill-library-generator` run on a runnable MILP with a real `gate_command` (`python3 model.py --check`) |
 
 ## Full (fictional) examples
 
@@ -29,7 +28,7 @@ no fast gate exists).
 |---|---|---|
 | [Deep-learning training & evaluation](ml-training-pipeline.md) | CS / AI | `statistical-reporting` + `numerical-determinism` |
 | [Variational quantum algorithms](quantum-vqe.md) | Quantum computing | `correctness-gate` (classical oracle) |
-| [Climate ensemble calibration](climate-ensemble-calibration.md) | Earth science | `reproducibility-provenance` |
+| [Climate ensemble calibration](climate-ensemble-calibration.md) | Earth science | `run-provenance` |
 | [Molecular-dynamics binding free energy](md-binding-free-energy.md) | Computational chemistry | `canonical-params` |
 | [Fusion / plasma simulation](fusion-plasma-simulation.md) | Plasma physics | `correctness-gate` + convergence |
 
