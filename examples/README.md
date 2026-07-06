@@ -10,13 +10,14 @@ skill or template contains a domain term — the portability gate (`grep` over `
 
 ## Real worked example
 
-One page is **not** fictional. It reproduces an actual AI failure mode — a 3GPP TR 36.777
-air-to-ground path-loss model that silently mixed UMa and UMi scenario parameters — with real
-spec-verified constants and a script that was actually run, and shows the gate catching it.
+Two pages are **not** fictional. Each reproduces an actual failure mode with real numbers from a
+script that was run, and shows the gate catching it — one against a published spec, one against a
+mathematical constant.
 
 | Example | Domain | Signature skill it spotlights |
 |---|---|---|
 | [A2G path-loss parameter mismatch (real)](a2g-pathloss-3gpp.md) | Wireless / telecom | `correctness-gate` + `canonical-params` + `lit-anchor` |
+| [Monte Carlo π — lucky run, over-claimed precision (real)](monte-carlo-pi.md) | Numerical / stats | `statistical-reporting` + `reproducibility-provenance` + `correctness-gate` |
 
 ## Full (fictional) examples
 
