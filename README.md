@@ -46,6 +46,19 @@ ceremony.
   <sub>A second <strong>real</strong> case (<a href="examples/monte-carlo-pi.md">worked out here</a> · <a href="https://claude.ai/code/artifact/5bfcc9ae-2530-47d3-b5ce-fcd938d31238">animated version</a>): one lucky Monte-Carlo run claimed π to ±1×10⁻⁴; the 20 recorded runs scatter 30× wider (95% CI ±8.9×10⁻⁴), and the discipline directs the agent to hold the claim until the interval is reported and the seed logged.</sub>
 </p>
 
+## What you actually do (five steps)
+
+1. **Install** — `claude plugin install aletheia@aletheia` (or trial one session with `--plugin-url`).
+2. **Bind** — "run the skill-library-generator", answer two questions: which modules corrupt
+   your results if silently wrong (`critical_modules`), and the one command that must pass
+   before "done" (`gate_command`).
+3. **Gate** — touch critical code → that command must be green before you call it done.
+4. **Keep a run** — `results/<name>_<date>/meta.json`, with the expected outcome written
+   *before* you launch.
+5. **Close a milestone** — `phase-gate` verifies your written checklist against named artifacts.
+
+Ten-minute tour: [`docs/quickstart.md`](docs/quickstart.md).
+
 ## Motivation
 
 Computational results fail reproducibility for mundane, recurring reasons: an unpinned
