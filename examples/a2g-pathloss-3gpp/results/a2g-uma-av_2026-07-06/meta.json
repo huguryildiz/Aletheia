@@ -1,0 +1,15 @@
+{
+  "task": "Adoption run of the A2G 3GPP TR 36.777 model at the correct UMa-AV binding; solve + correctness gate. Executes docs/decisions.md D01.",
+  "status": "COMPLETE",
+  "git_commit": "f75ea858fad063e48a9f26d68932bec52dc88f6e",
+  "git_tree_clean_at_launch": false,
+  "scripts": [
+    { "path": "model.py", "sha256": "220e0d363a0a2d1c0a1e887cc797762cfc898b43e45954b223c78983bf4f1c67", "args": "python3 model.py --check" }
+  ],
+  "parameters": { "scenario": "UMa-AV", "fc_GHz": 2.0, "h_BS_m": 25.0, "h_UAV_m": 100.0 },
+  "environment": { "interpreter_version": "3.9.20", "arch": "x86_64", "arch_native_verified": false },
+  "expectation": "Written before the run: computed LoS probability and total loss match the 3GPP-verified ground truth in expected.json at every test distance, and the scenario-consistency check passes (gate exits 0).",
+  "outputs": ["solutions.csv", "los-probability.svg"],
+  "results": { "gate": "PASS", "P_LOS_1km": 0.8533, "Ptot_1km_dB": 102.53, "matches_ground_truth": true },
+  "provenance_note": "Genuine, license-free run (only Python stdlib). Ground truth in expected.json is anchored to 3GPP TR 36.777 as verified in examples/a2g-pathloss-3gpp.md; not independently re-read from the standard during this run. arch_native_verified is false: x86_64 under Rosetta, not native arm64."
+}

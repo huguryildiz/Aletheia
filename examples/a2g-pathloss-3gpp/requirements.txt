@@ -1,0 +1,3 @@
+# model.py and the gate (python3 model.py --check) use only the Python standard library.
+# matplotlib is needed ONLY for plot.py (the figure).
+matplotlib>=3.5

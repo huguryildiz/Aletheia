@@ -1,0 +1,7 @@
+# Bulk run outputs gitignored; the record (README, meta.json, curated summaries) is not.
+*
+!.gitignore
+!README.md
+!*/
+!*/meta.json
+!*/*.md

@@ -18,7 +18,7 @@ a script that was run, and shows the gate catching it.
 
 | Example | Domain | Signature skill it spotlights |
 |---|---|---|
-| [A2G path-loss parameter mismatch (real)](a2g-pathloss-3gpp.md) | Wireless / telecom | `correctness-gate` + `canonical-params` + `lit-anchor` |
+| [A2G path-loss parameter mismatch (real)](a2g-pathloss-3gpp.md) · [runnable repo](a2g-pathloss-3gpp/) | Wireless / telecom | `correctness-gate` (vs 3GPP ground truth) + `canonical-params` + `lit-anchor` |
 | [Monte Carlo π — lucky run, over-claimed precision (real)](monte-carlo-pi.md) | Numerical / stats | `statistical-reporting` + `run-provenance` + `correctness-gate` |
 | [UWSN non-uniform k-connectivity — end-to-end generator adoption (real)](adoption-transcript.md) | Wireless sensor networks | full `skill-library-generator` run on a runnable MILP with a real `gate_command` (`python3 model.py --check`) |
 

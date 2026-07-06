@@ -1,0 +1,12 @@
+{
+  "_source": "3GPP TR 36.777 V15.0.0, Tables B-1 / B-2 (UMa-AV). Values verified against the primary standard; see examples/a2g-pathloss-3gpp.md, Provenance. This file is the gate's ground truth.",
+  "scenario": "UMa-AV",
+  "params": { "fc_GHz": 2.0, "h_BS_m": 25.0, "h_UAV_m": 100.0 },
+  "by_distance": {
+    "200":  { "P_LOS": 1.0000, "Ptot_dB": 85.27 },
+    "500":  { "P_LOS": 0.9446, "Ptot_dB": 94.28 },
+    "1000": { "P_LOS": 0.8533, "Ptot_dB": 102.53 },
+    "2000": { "P_LOS": 0.6967, "Ptot_dB": 112.70 },
+    "4000": { "P_LOS": 0.4657, "Ptot_dB": 125.54 }
+  }
+}
