@@ -126,9 +126,9 @@ Read-only. Writes nothing; reports. Steps:
    - UNRUNNABLE — the command, interpreter, or a required dependency/license is
      absent in this environment, so no GREEN/RED verdict is possible here. Treat
      as MANUAL: the gate is real but must be VERIFY BY HAND on a machine that can
-     run it (e.g. the UWSN gate `python3 model.py --check` needs a Gurobi license
-     — see the adoption transcript). Never fabricate GREEN for a gate you could
-     not actually run.
+     run it (e.g. a gate that needs a proprietary-solver license absent from CI —
+     see the adoption transcript for a worked case). Never fabricate GREEN for a
+     gate you could not actually run.
    - MANUAL — VERIFY BY HAND — the binding is a documented by-hand check rather
      than a shell command at all. Name it.
 4. **Report**, one line per binding + a coverage footer (what was read, what was
