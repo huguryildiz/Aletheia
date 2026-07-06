@@ -6,14 +6,15 @@ not importance.
 ## Core (11) — `tier: core`
 
 The everyday operating discipline. These were **harvested from a working research
-repository** (nine directly from its practiced rules and skills, two — `environment-lock`,
-`data-fingerprint` — promoted from that project's own gap audit as the highest-value
-reproducibility levers). A project adopting Aletheia is expected to run all of Core from
-day one; each one exists because its absence produced a real failure mode.
+repository** — its practiced rules and skills, plus `run-provenance`, consolidated from
+that project's own gap audit as the highest-value reproducibility lever (environment +
+input + seed fingerprints for every kept run). A project adopting Aletheia is expected to
+run all of Core from day one; each one exists because its absence produced a real failure
+mode.
 
 `project-layout` · `layer-sync` · `decision-log` · `build-log` · `phase-gate` ·
-`correctness-gate` · `canonical-params` · `environment-lock` · `data-fingerprint` ·
-`evidence-convention` · `research-methodology`
+`correctness-gate` · `canonical-params` · `run-provenance` · `evidence-convention` ·
+`research-methodology`
 
 ## Extended (7) — `tier: extended`, `status: recommended`
 
@@ -22,8 +23,8 @@ practice, grounded in the exemplar where it practiced them. Recommended, adopted
 deliberately — a small exploratory project may defer some; a project writing a paper should
 be running all seven by submission time.
 
-`reproducibility-provenance` · `statistical-reporting` · `numerical-determinism` ·
-`negative-results-ledger` · `external-positioning` · `lit-anchor`
+`statistical-reporting` · `numerical-determinism` · `negative-results-ledger` ·
+`external-positioning` · `lit-anchor`
 
 ## Generator (1) — `tier: generator`
 
@@ -40,9 +41,9 @@ small change into bureaucracy.**
 | Work type (trigger) | Default (do this) | Escalate to … when … |
 |---|---|---|
 | small exploration | notebook + light note (`project-layout`) | — (stays light) |
-| reusable experiment / real run | script + `evidence-convention` (results dir + meta) | + `environment-lock` & `data-fingerprint` when it feeds a paper figure/claim or must be reproduced by others |
+| reusable experiment / real run | script + `evidence-convention` (results dir + meta) | + `run-provenance` (env + input + seed fingerprints) when it feeds a paper figure/claim or must be reproduced by others |
 | critical logic change | `correctness-gate` (run the named gate) | + `canonical-params` when it touches protected defaults; + `decision-log` when a red gate is an *intentional* formulation change |
-| stochastic run | record seeds (`reproducibility-provenance`) | + `numerical-determinism` when results must be bit-reproducible / cross-machine |
+| stochastic run | record seeds (`run-provenance`) | + `numerical-determinism` when results must be bit-reproducible / cross-machine |
 | numeric claim / result | `statistical-reporting` (replication + interval) | + `verifier` agent when the claim is load-bearing (goes in the paper); + `external-positioning` when it is a novelty claim |
 | phase conclusion | `phase-gate` checklist | + `build-log` when it is a real milestone, not a trivial sub-step |
 | assumption / default change | `decision-log` entry | + `layer-sync` when it touches ≥ 2 layers; + `canonical-params` when it is a canonical default |

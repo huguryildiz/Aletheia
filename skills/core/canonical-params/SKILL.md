@@ -64,7 +64,7 @@ discipline either way. This pack ships documentation only, no executable hooks.
    canonical point is part of the scientific record; an undocumented change is drift with a
    timestamp.
 4. **Results cite their operating point.** Run meta files record the canonical-values hash
-   (see `data-fingerprint`), so "which defaults produced this number?" always has one answer.
+   (see `run-provenance`), so "which defaults produced this number?" always has one answer.
 5. **Fixed-by-finding beats fixed-by-fiat.** When a canonical value is chosen from a
    measured sweep, link the sweep evidence; when it is a design guess, label it honestly as
    "to be calibrated".

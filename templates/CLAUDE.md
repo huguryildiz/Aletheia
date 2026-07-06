@@ -35,8 +35,8 @@ aletheia:
   decision_log:     "docs/decisions.md"                              # decision-log file
   build_log_dir:    "docs/build_log/"                                # build-log entries
   phase_plan:       "docs/roadmap/plan.md"                           # phase tables + acceptance checklists (phase-gate)
-  env_manifest:     "pyproject.toml"                                 # + lockfile alongside (environment-lock)
-  data_dir:         "data/"                                          # input data root (data-fingerprint)
+  env_manifest:     "pyproject.toml"                                 # + lockfile alongside (run-provenance)
+  data_dir:         "data/"                                          # input data root (run-provenance)
   bibliography:     "docs/references.bib"                            # verified citations (lit-anchor)
   claim_log:        "docs/novelty_claims.md"                         # optional: novelty/absence claims + backing searches (lit-anchor)
 ```
@@ -49,9 +49,9 @@ conditional. Never turn a small change into bureaucracy.**
 | Work type (trigger) | Default (do this) | Escalate to … when … |
 |---|---|---|
 | small exploration | notebook + light note (`project-layout`) | — (stays light) |
-| reusable experiment / real run | script + `evidence-convention` (results dir + meta) | + `environment-lock` & `data-fingerprint` when it feeds a paper figure/claim or must be reproduced by others |
+| reusable experiment / real run | script + `evidence-convention` (results dir + meta) | + `run-provenance` (env + input + seed fingerprints) when it feeds a paper figure/claim or must be reproduced by others |
 | critical logic change | `correctness-gate` (run the named gate) | + `canonical-params` when it touches protected defaults; + `decision-log` when a red gate is an *intentional* formulation change |
-| stochastic run | record seeds (`reproducibility-provenance`) | + `numerical-determinism` when results must be bit-reproducible / cross-machine |
+| stochastic run | record seeds (`run-provenance`) | + `numerical-determinism` when results must be bit-reproducible / cross-machine |
 | numeric claim / result | `statistical-reporting` (replication + interval) | + `verifier` agent when the claim is load-bearing (goes in the paper); + `external-positioning` when it is a novelty claim |
 | phase conclusion | `phase-gate` checklist | + `build-log` when it is a real milestone, not a trivial sub-step |
 | assumption / default change | `decision-log` entry | + `layer-sync` when it touches ≥ 2 layers; + `canonical-params` when it is a canonical default |

@@ -1,1 +1,0 @@
-../../../../skills/core/data-fingerprint/SKILL.md

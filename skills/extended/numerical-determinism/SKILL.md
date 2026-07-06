@@ -25,8 +25,8 @@ hardware-context record every run should carry.
 
 - Variation you *want* — spread across seeds/realizations is the object of study
   (`statistical-reporting`); do not pin it away.
-- Version-level differences (library upgrades changing algorithms) — `environment-lock`.
-- Recording which seeds were drawn — `reproducibility-provenance`.
+- Version-level differences (library upgrades changing algorithms) — `run-provenance`.
+- Recording which seeds were drawn — `run-provenance`.
 
 ## Sources of nondeterminism (check in this order)
 
@@ -73,7 +73,7 @@ numeric differences are undiagnosable without it:
 ```
 
 (Schema: `templates/results-meta.schema.json`. Architecture-native verification is
-`environment-lock`'s preflight; the field lands here.)
+`run-provenance`'s preflight; the field lands here.)
 
 ## Rules
 

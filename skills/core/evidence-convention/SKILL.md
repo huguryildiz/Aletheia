@@ -26,7 +26,7 @@ bulk.**
 - Small exploratory probes — those are notebook work (`project-layout`); the convention
   starts when a result will outlive the session.
 - Pure cache regeneration with no new claim attached (caches are inputs, not evidence — but
-  see `data-fingerprint` for their keys).
+  see `run-provenance` for their keys).
 
 ## The convention
 
@@ -34,8 +34,8 @@ bulk.**
 2. **`meta.json` is mandatory.** Minimum fields (schema: `templates/results-meta.schema.json`):
    - `task` — what this campaign is, with a pointer to the plan item or contract it executes;
    - `git_commit` + `git_tree_clean_at_launch` — code identity;
-   - config hash + input-data hashes (see `data-fingerprint`);
-   - environment fingerprint (see `environment-lock`);
+   - config hash + input-data hashes (see `run-provenance`);
+   - environment fingerprint (see `run-provenance`);
    - parameters/grid actually run, seeds/realization list;
    - `expectation` — what was predicted **before** running (see `research-methodology`);
    - `status` and pointers to output files.

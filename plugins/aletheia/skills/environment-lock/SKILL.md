@@ -1,1 +1,0 @@
-../../../../skills/core/environment-lock/SKILL.md

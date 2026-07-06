@@ -26,7 +26,7 @@ how numbers become claims.
   the value; intervals around determinism are theater.
 - Exploratory probes not yet feeding a claim — but promote them through this skill before
   they do.
-- Choosing seeds/realization mechanics — `reproducibility-provenance`.
+- Choosing seeds/realization mechanics — `run-provenance`.
 
 ## Runbook
 

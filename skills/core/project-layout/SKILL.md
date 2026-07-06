@@ -36,7 +36,7 @@ Adapt names to the project; keep the separations. The copyable version lives in 
 ├── README.md                 # summary, install, how to run
 ├── TODO.md                   # current-iteration execution buffer (ephemeral, rewritten per phase)
 ├── CLAUDE.md                 # operating rules + the Aletheia config block
-├── <env manifest + lockfile> # pyproject.toml + lock, environment.yml, etc. (see environment-lock)
+├── <env manifest + lockfile> # pyproject.toml + lock, environment.yml, etc. (see run-provenance)
 ├── docs/
 │   ├── README.md             # authority map: which document is current / stale / archived
 │   ├── decisions.md          # ADR-lite decision chain (see decision-log)
@@ -52,7 +52,7 @@ Adapt names to the project; keep the separations. The copyable version lives in 
 ├── scripts/                  # reusable CLI pipelines (run repeatedly, produce artifacts)
 ├── notebooks/                # numbered exploratory narratives + README manifest
 ├── tests/                    # unit + integration; includes the named correctness gate
-├── data/                     # inputs — gitignored, README tracked (see data-fingerprint)
+├── data/                     # inputs — gitignored, README tracked (see run-provenance)
 ├── models/                   # trained/fitted artifacts — gitignored
 └── results/                  # run evidence — gitignored, selected summaries force-added
                               # (see evidence-convention)

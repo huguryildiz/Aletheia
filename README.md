@@ -90,8 +90,7 @@ domains.**
 | `phase-gate` | closure = a written checklist verified against named evidence; one OPEN item = no closure |
 | `correctness-gate` | a critical module is touched → the named gate must pass before “done” |
 | `canonical-params` | protected defaults change only inside a sweep or with approval and a record |
-| `environment-lock` | manifest + lockfile committed; engine versions and native architecture fingerprinted per run |
-| `data-fingerprint` | every input hashed into the run's meta; “did the data change?” has one answer |
+| `run-provenance` | engine/arch fingerprint + input hashes + re-derivable seeds — everything `meta.json` must record about a run |
 | `evidence-convention` | no dark runs: `results/<name>_<date>/meta.json` with pre-registered expectations |
 | `research-methodology` | claims follow verification; predictions precede runs; ceremony scales with consequence |
 
@@ -99,7 +98,6 @@ domains.**
 
 | Skill | One line |
 |---|---|
-| `reproducibility-provenance` | seeds recorded and re-derivable; every figure regenerates from one command |
 | `statistical-reporting` | never report a single run; replication + intervals + visible denominators |
 | `numerical-determinism` | threads/kernels pinned where claimed; hardware context recorded; reproducibility tiers named |
 | `negative-results-ledger` | dead ends leave a one-line record; rigorous negatives get promoted, not buried |

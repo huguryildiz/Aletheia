@@ -1,1 +1,0 @@
-../../../../skills/extended/reproducibility-provenance/SKILL.md

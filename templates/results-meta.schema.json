@@ -26,7 +26,7 @@
     },
     "config_sha256": {
       "type": "string",
-      "description": "SHA-256 of the file defining the canonical defaults the run assumed (see canonical-params / data-fingerprint)."
+      "description": "SHA-256 of the file defining the canonical defaults the run assumed (see canonical-params / run-provenance)."
     },
     "config_path": {
       "type": "string",
@@ -34,7 +34,7 @@
     },
     "inputs": {
       "type": "array",
-      "description": "Fingerprints of every dataset/file the run read (see data-fingerprint).",
+      "description": "Fingerprints of every dataset/file the run read (see run-provenance).",
       "items": {
         "type": "object",
         "required": ["name", "path", "sha256"],
@@ -60,7 +60,7 @@
     },
     "environment": {
       "type": "object",
-      "description": "Environment fingerprint (see environment-lock).",
+      "description": "Environment fingerprint (see run-provenance).",
       "properties": {
         "interpreter_version": { "type": "string" },
         "arch": { "type": "string" },
@@ -89,7 +89,7 @@
     },
     "seeds": {
       "type": "object",
-      "description": "RNG provenance (see reproducibility-provenance).",
+      "description": "RNG provenance (see run-provenance).",
       "properties": {
         "base_seed": { "type": "integer" },
         "derivation": { "type": "string", "description": "Rule mapping realization index to seed." },
