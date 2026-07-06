@@ -24,7 +24,7 @@ harness-portable by construction. It ships as a Claude Code plugin and as a nati
 plugin. Non-markdown shipped files are limited to declarative manifests, marketplace
 metadata, schema files, and presentation assets.
 
-The library divides into **18 skills** (11 everyday-discipline *core*, 7 reproducibility-and-
+The library divides into **14 skills** (9 everyday-discipline *core*, 5 reproducibility-and-
 positioning *extended*), a **generator** that binds the pack to a specific repository, and
 three **read-only auditor agents**. A companion routing table maps each kind of work to the
 discipline it triggers — with escalation conditions, so a small change never incurs heavy
@@ -76,14 +76,14 @@ than reconstructed at submission time.
 
 ## What ships
 
-**18 skills · 1 generator · 3 agents · 5 templates · 6 docs · worked examples across five
+**14 skills · 1 generator · 3 agents · 5 templates · 6 docs · worked examples across five
 domains.**
 
-### Core skills (11) — everyday discipline
+### Core skills (9) — everyday discipline
 
 | Skill | One line |
 |---|---|
-| `project-layout` | one home per artifact class; bulk directories gitignored, their records tracked |
+| `project-layout` | one home per artifact class (notebook vs. script vs. package placement + notebook-series discipline); bulk directories gitignored, their records tracked |
 | `layer-sync` | decisions → spec → code → notebooks stay in agreement; drift gets file:line citations |
 | `decision-log` | numbered ADR-lite chain, newest on top; superseded entries never deleted |
 | `build-log` | write-once phase/gate evidence entries — the paper's raw methods material |
@@ -93,14 +93,14 @@ domains.**
 | `run-provenance` | engine/arch fingerprint + input hashes + re-derivable seeds — everything `meta.json` must record about a run |
 | `evidence-convention` | no dark runs: `results/<name>_<date>/meta.json` with pre-registered expectations |
 
-### Extended skills (7) — reproducibility & positioning · `status: recommended`
+### Extended skills (5) — reproducibility & positioning · `status: recommended`
 
 | Skill | One line |
 |---|---|
 | `statistical-reporting` | never report a single run; replication + intervals + visible denominators |
 | `numerical-determinism` | threads/kernels pinned where claimed; hardware context recorded; reproducibility tiers named |
 | `negative-results-ledger` | dead ends leave a one-line record; rigorous negatives get promoted, not buried |
-| `external-positioning` | novelty book-kept; claims scoped to the evidence that supports them |
+| `external-positioning` | novelty book-kept; claims scoped to the evidence that supports them; every kept figure regenerates from one command |
 | `lit-anchor` | AI fabricates citations — resolve every DOI one-by-one; a bulk citation list is a draft, never a result |
 
 ### Generator & agents
@@ -192,8 +192,8 @@ only the nouns change.
 ## Repository map
 
 ```text
-skills/core/…            11 everyday-discipline skills
-skills/extended/…         7 reproducibility & positioning skills
+skills/core/…             9 everyday-discipline skills
+skills/extended/…         5 reproducibility & positioning skills
 skills/skill-library-generator/   the binder/generator meta-skill
 agents/                   3 read-only auditor agents
 plugins/aletheia/         Codex plugin root (symlinked skills + .codex-plugin/plugin.json)
@@ -212,7 +212,7 @@ examples/                 5 worked examples + portability matrix
   title   = {Aletheia: Operating Discipline for Rigorous, Reproducible
              Computational-Science Research},
   year    = {2026},
-  version = {0.1.0},
+  version = {0.2.0},
   url     = {https://github.com/huguryildiz/Aletheia}
 }
 ```

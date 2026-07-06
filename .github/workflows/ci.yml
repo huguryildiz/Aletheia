@@ -16,7 +16,7 @@ jobs:
           if [ -n "$broken" ]; then echo "BROKEN SYMLINKS:"; echo "$broken"; exit 1; fi
           n=$(find plugins/aletheia/skills -type l | wc -l | tr -d ' ')
           echo "symlinks resolving: $n"
-          test "$n" -ge 20 || { echo "expected >=20 symlinks, got $n"; exit 1; }
+          test "$n" -eq 18 || { echo "expected exactly 18 symlinks (14 skills + 1 generator + 3 agents), got $n"; exit 1; }
 
       - name: Relative markdown links resolve
         run: |

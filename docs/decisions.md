@@ -15,6 +15,64 @@ Ordering: date (new -> old).
 
 ---
 
+## D05 — Single-source the routing table; demote research-methodology to a read-once doc
+
+**Status**: accepted
+**Date**: 2026-07-06
+
+**Context**: The work-type routing table was mirrored in three places (`templates/CLAUDE.md`,
+`docs/core-vs-extended.md`, and prose inside the `research-methodology` skill). A copy is a
+drift source by construction — the pack's own `layer-sync` would flag it. Separately, the
+`research-methodology` skill's only unique contributions (audit §4) were the idea lifecycle
+and the silent-failure test-density rule; the rest restated `templates/CLAUDE.md`, `phase-gate`,
+`evidence-convention`, and `canonical-params`. A skill that mostly forwards to other skills is
+trigger-surface noise.
+
+**Decision**:
+
+1. The operative routing table lives once in `templates/CLAUDE.md` (the adopter's
+   always-loaded config). `docs/core-vs-extended.md` links to it instead of mirroring it.
+2. `research-methodology` is demoted to `docs/methodology.md` — a read-once philosophy doc
+   carrying the idea lifecycle and the test-density rule, not a triggerable skill.
+3. Skill cross-references that pointed at `research-methodology` now point at the concrete
+   owning skill (pre-registration → `evidence-convention`) to keep skills portable.
+
+**Impact**: `docs/core-vs-extended.md`, `docs/methodology.md`; one canonical routing table;
+core drops from 10 to 9 skills.
+
+---
+
+## D04 — Taxonomy simplified 18 → 14 skills (merge, dissolve, demote per audit §9)
+
+**Status**: accepted
+**Date**: 2026-07-06
+
+**Context**: The audit (§9) found the skill count outran the idea count: overlapping skills
+inflated the trigger surface. Product size should match idea count. Three consolidations were
+identified — a placement merge, a provenance consolidation, and a methodology demotion — with
+no idea lost (each named keeper line survives into its new home). The one correction to §9:
+its literal target was 13, dropping `canonical-params`; per audit §4 "Keep", `canonical-params`
+is a distinct discipline (protected defaults), so the honest target is **14**, recorded here
+rather than silently following §9.
+
+**Decision**:
+
+1. **Merge** `notebook-vs-script` → `project-layout` (placement + notebook-series discipline
+   now live in one skill).
+2. **Dissolve** `environment-lock` + `data-fingerprint` + `reproducibility-provenance` (seed
+   half) into a new core skill `run-provenance` — everything `meta.json` must record about a
+   run (environment, inputs, seeds). The reproducibility figure bar moves to
+   `external-positioning`; its citation section is deleted (`lit-anchor` is the sole authority).
+3. **Demote** `research-methodology` → `docs/methodology.md` (see D05).
+4. **Keep** `canonical-params` unchanged (correction to §9's literal 13).
+
+Net: 9 core + 5 extended = **14 skills** + 1 generator + 3 agents = **18 symlinks**.
+
+**Impact**: symlink surface (22 → 18), the three manifests (v0.1.0 → v0.2.0, "18 → 14 portable
+skills"), README tables and counts, the routing table, and the CI symlink threshold (`-eq 18`).
+
+---
+
 ## D03 — Give the Codex plugin its own root folder, separate from the repo root
 
 **Status**: accepted

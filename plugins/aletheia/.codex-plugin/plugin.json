@@ -1,7 +1,7 @@
 {
   "name": "aletheia",
-  "version": "0.1.0",
-  "description": "Operating discipline for rigorous, reproducible computational-science research: 18 portable skills, 3 read-only auditor procedures, and a generator meta-skill.",
+  "version": "0.2.0",
+  "description": "Operating discipline for rigorous, reproducible computational-science research: 14 portable skills, 3 read-only auditor procedures, and a generator meta-skill.",
   "author": {
     "name": "Huseyin Ugur Yildiz",
     "url": "https://github.com/huguryildiz"

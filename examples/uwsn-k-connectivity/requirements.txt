@@ -1,0 +1,3 @@
+# Solver: Gurobi (commercial; free academic license). Pinned to the tested major line.
+# Verified in this repo with gurobipy 9.5.1 under an academic license.
+gurobipy>=9.5,<10
