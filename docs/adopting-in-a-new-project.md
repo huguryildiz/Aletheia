@@ -59,6 +59,18 @@ failing.
 - Load-bearing claims meet the **`verifier`** agent before they travel
   (`external-positioning` for anything novelty-shaped).
 
+## Keeping bindings healthy
+
+Bindings rot. Paths get renamed, the gate command changes, critical modules move — and the
+config block in `CLAUDE.md` silently stops pointing at reality. When you suspect that (weeks
+after adoption, or after any restructure), run **`aletheia-doctor`** — the generator's
+read-only re-audit mode. It reads the same config block first-time generation wrote and, in
+the opposite direction, *checks* it: each `{{critical_modules}}` / `{{doc_layers}}` /
+`results/` binding marked RESOLVES / MISSING / STALE, and the gate re-run on a clean tree
+reported GREEN / RED / UNRUNNABLE / MANUAL. It fixes nothing and writes nothing — a MISSING
+or RED finding is handed back to you. It is the pack's own answer to binding rot: the
+maintenance counterpart to first-time generation.
+
 ## Growing your local library
 
 Re-run the generator quarterly (or after any painful incident) in harvest mode: "what kept

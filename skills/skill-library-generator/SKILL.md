@@ -103,6 +103,37 @@ first:
    plugin-root layout in `docs/install.md` Path C.
 5. Commit only if the maintainer asks; report exactly what was created either way.
 
+## Re-audit mode — `aletheia-doctor`
+
+Trigger: "run aletheia-doctor", "re-audit the bindings", "are the Aletheia
+bindings still valid?" — used weeks after adoption, when binding rot is the risk
+(paths renamed, gate command changed, critical modules moved). This is the
+read-only counterpart to first-time generation: same config block, opposite
+direction — it *checks* what generation *wrote*.
+
+Read-only. Writes nothing; reports. Steps:
+
+1. **Read the config block** in the repo's `CLAUDE.md`. If absent → report
+   NOT ADOPTED and stop (suggest the generator, not the doctor).
+2. **Resolve each binding** and mark it:
+   - `{{critical_modules}}` — each path exists? → RESOLVES / MISSING (name it).
+   - `{{doc_layers}}` — each declared doc/layer path exists? → RESOLVES / MISSING.
+   - `results/` convention — directory present; most recent `meta.json` parses? → RESOLVES / STALE / MISSING.
+3. **Re-run the gate on a clean tree.** Confirm the working tree is clean
+   (uncommitted changes make the result unattributable — report DIRTY and stop).
+   Run `{{gate_command}}`. Report the honest outcome:
+   - GREEN / RED — the gate ran to a verdict.
+   - UNRUNNABLE — the command, interpreter, or a required dependency/license is
+     absent in this environment, so no GREEN/RED verdict is possible here. Treat
+     as MANUAL: the gate is real but must be VERIFY BY HAND on a machine that can
+     run it (e.g. the UWSN gate `python3 model.py --check` needs a Gurobi license
+     — see the adoption transcript). Never fabricate GREEN for a gate you could
+     not actually run.
+   - MANUAL — VERIFY BY HAND — the binding is a documented by-hand check rather
+     than a shell command at all. Name it.
+4. **Report**, one line per binding + a coverage footer (what was read, what was
+   run). Never "fix" — a MISSING/RED finding is handed to the human.
+
 ## Rules
 
 1. **Ground-truth-only.** Every command, path, and claim in anything you generate is
