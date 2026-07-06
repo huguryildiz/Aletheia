@@ -1,49 +1,79 @@
-# ALETHEIA
+<p align="center">
+  <h1 align="center">ALETHEIA</h1>
+</p>
 
-**Operating discipline for rigorous, reproducible computational-science research — shipped
-as a portable Claude skill pack.**
+<p align="center">
+  <strong>Operating discipline for rigorous, reproducible computational-science research.</strong><br>
+  <sub>A portable Claude skill pack — discipline as instructions, not enforcement as scripts.</sub>
+</p>
 
-Aletheia (ἀλήθεια — "disclosure, the state of not being hidden") encodes how a
-results-producing research repository stays honest: where evidence lands, what gates a
-"done" claim, how decisions propagate, and what a number must carry before it enters a
-paper. It is **markdown-only** — discipline as instructions, not enforcement as scripts —
-which makes it model- and harness-portable by construction.
+<p align="center">
+  <img src="https://img.shields.io/badge/license-MIT-0f172a?style=for-the-badge" alt="MIT License">
+  <img src="https://img.shields.io/badge/markdown--only-no%20executable%20code-0b1220?style=for-the-badge" alt="Markdown only">
+  <img src="https://img.shields.io/badge/Claude%20Code-plugin-0b1220?style=for-the-badge" alt="Claude Code plugin">
+  <img src="https://img.shields.io/badge/Agent%20Skills-standard-0b1220?style=for-the-badge" alt="Agent Skills standard">
+  <img src="https://img.shields.io/badge/disciplines-18-0b1220?style=for-the-badge" alt="18 disciplines">
+</p>
 
-The pack was **mined from one real research project** (an underwater sensor-network
-optimization effort targeting a journal paper — see
-[examples gallery](examples/)), generalized until it reads naturally in
-any computational domain — molecular dynamics, climate modeling, bioinformatics, ML
-training — and stress-tested against that bar. Domain content lives in exactly one file:
-the example.
+<p align="center">
+  <em>ἀλήθεια — “disclosure; the state of not being hidden.”</em>
+</p>
 
-## Who it is for
+---
 
-- Researchers running computation-heavy projects (a PI + student, a small lab, a solo
-  PhD) who want paper-grade reproducibility without building process from scratch.
-- AI-assisted workflows: the skills are runbooks an agent follows, with bindings that
-  pin them to *your* repo.
+## Overview
+
+**Aletheia** is a portable, open-source Claude skill pack that encodes the *operating
+discipline* of a results-producing computational-science project: where evidence lands, what
+gates a “done” claim, how decisions propagate across a repository, and what a number must carry
+before it enters a paper. It ships as **markdown only** — the pack is a set of runbooks an
+agent (or a person) follows, not a framework to install — which makes it model- and
+harness-portable by construction. The only non-markdown files are declarative data: the plugin
+manifest and one JSON Schema.
+
+The library divides into **18 skills** (11 everyday-discipline *core*, 7 reproducibility-and-
+positioning *extended*), a **generator** that binds the pack to a specific repository, and
+three **read-only auditor agents**. A companion routing table maps each kind of work to the
+discipline it triggers — with escalation conditions, so a small change never incurs heavy
+ceremony.
+
+## Motivation
+
+Computational results fail reproducibility for mundane, recurring reasons: an unpinned
+dependency, an unlogged seed, a silently loosened test tolerance, a figure no one can
+regenerate, a single lucky run reported as a finding, a citation that was never verified. None
+of these are exotic; each is a discipline gap that a senior researcher normally patches by
+habit and memory. Aletheia writes those habits down as checkable procedures so that a lab
+member — or an AI agent working in the repository — inherits them on day one rather than
+relearning them after the damage is in the manuscript.
+
+The pack is deliberately **provenance-first and honesty-first**. Its governing rules —
+ground-truth over assertion, derived state over stored state, evidence before a claim — are the
+same standards a careful methods section must meet, applied continuously during the work rather
+than reconstructed at submission time.
 
 ## What ships
 
-**18 skills + 1 generator + 3 agents + 5 templates + 5 docs + 1 worked example.**
+**18 skills · 1 generator · 3 agents · 5 templates · 5 docs · worked examples across five
+domains.**
 
 ### Core skills (11) — everyday discipline
 
 | Skill | One line |
 |---|---|
-| `project-layout` | one home per artifact class; bulk dirs gitignored, their records tracked |
+| `project-layout` | one home per artifact class; bulk directories gitignored, their records tracked |
 | `layer-sync` | decisions → spec → code → notebooks stay in agreement; drift gets file:line citations |
 | `decision-log` | numbered ADR-lite chain, newest on top; superseded entries never deleted |
 | `build-log` | write-once phase/gate evidence entries — the paper's raw methods material |
-| `phase-gate` | closure = written checklist verified against named evidence; one OPEN item = no closure |
-| `correctness-gate` | critical module touched → the named gate must pass before "done" |
-| `canonical-params` | protected defaults change only in a sweep or with approval + record |
-| `environment-lock` | manifest + lockfile committed; engine versions and native-arch fingerprinted per run |
-| `data-fingerprint` | every input hashed into the run's meta; "did the data change?" has one answer |
+| `phase-gate` | closure = a written checklist verified against named evidence; one OPEN item = no closure |
+| `correctness-gate` | a critical module is touched → the named gate must pass before “done” |
+| `canonical-params` | protected defaults change only inside a sweep or with approval and a record |
+| `environment-lock` | manifest + lockfile committed; engine versions and native architecture fingerprinted per run |
+| `data-fingerprint` | every input hashed into the run's meta; “did the data change?” has one answer |
 | `evidence-convention` | no dark runs: `results/<name>_<date>/meta.json` with pre-registered expectations |
 | `research-methodology` | claims follow verification; predictions precede runs; ceremony scales with consequence |
 
-### Extended skills (6) — reproducibility + positioning (`status: recommended`)
+### Extended skills (7) — reproducibility & positioning · `status: recommended`
 
 | Skill | One line |
 |---|---|
@@ -52,54 +82,88 @@ the example.
 | `numerical-determinism` | threads/kernels pinned where claimed; hardware context recorded; reproducibility tiers named |
 | `negative-results-ledger` | dead ends leave a one-line record; rigorous negatives get promoted, not buried |
 | `notebook-vs-script` | one-offs → notebooks, pipelines → scripts, shared logic → the package |
-| `external-positioning` | novelty bookkept, citations verified one-by-one, claims scoped to evidence |
+| `external-positioning` | novelty book-kept; claims scoped to the evidence that supports them |
 | `lit-anchor` | AI fabricates citations — resolve every DOI one-by-one; a bulk citation list is a draft, never a result |
 
-### Generator
+### Generator & agents
 
-`skill-library-generator` — binds the pack to your repo by interview (config block in
-`CLAUDE.md`) and mines your project's own failure modes into local skills. Claude is the
-runtime; there is no bootstrap script.
+- **`skill-library-generator`** — binds the pack to your repository by interview (a config
+  block in `CLAUDE.md`) and mines your project's own failure modes into local skills. Claude is
+  the runtime; there is no bootstrap script.
+- **`session-historian`** (state digest from the record) · **`drift-auditor`** (layer-sync
+  audit) · **`verifier`** (adversarial refutation of load-bearing claims). All three are
+  read-only reporters — they write nothing, ever.
 
-### Agents (read-only auditors)
-
-`session-historian` (state digest from the record) · `drift-auditor` (layer-sync audit) ·
-`verifier` (adversarial refutation of load-bearing claims). They write nothing, ever.
-
-## Quickstart
+## How it works
 
 ```bash
-# try it for one session
-claude --plugin-url https://github.com/huguryildiz/aletheia
+# try it for a single session
+claude --plugin-url https://github.com/huguryildiz/Aletheia
 ```
 
-Then, inside your project: *"run the skill-library-generator"* — it scans (read-only),
-interviews you, and scaffolds the record surfaces after your approval. Ten-minute tour:
-[docs/quickstart.md](docs/quickstart.md) · install options (plugin vs plain `.claude/`
-copy): [docs/install.md](docs/install.md) · full adoption walkthrough:
-[docs/adopting-in-a-new-project.md](docs/adopting-in-a-new-project.md).
+Inside your project, invoke *“run the skill-library-generator.”* It scans the repository
+read-only, interviews you to fill the configuration bindings, and — only after your approval —
+scaffolds the record surfaces. Each skill thereafter refers to those bindings (`{{gate_command}}`,
+`{{critical_modules}}`, `{{doc_layers}}`, …) rather than any hardcoded path, so the same
+discipline reads naturally whether the project runs a solver, a climate model, a training loop,
+or none of the above.
 
-## Design principles (the short form)
+**Ten-minute tour:** [`docs/quickstart.md`](docs/quickstart.md) · **install options** (plugin
+vs. a plain `.claude/` copy): [`docs/install.md`](docs/install.md) · **full adoption
+walkthrough:** [`docs/adopting-in-a-new-project.md`](docs/adopting-in-a-new-project.md).
 
-1. **Ground-truth only** — every runbook step was verified against a real repo; inference
-   is labeled.
-2. **State is derived, not stored** — no mutable status file anywhere; verdicts live in
-   immutable evidence and are recomputed.
-3. **No source mutation** — agents are read-only reporters; writing is a skill action the
-   human sees.
-4. **Markdown only** — the only non-markdown files are `plugin.json` and a JSON Schema.
+## Design principles
 
-Full text + the portability gate: [docs/design-principles.md](docs/design-principles.md) ·
-tier semantics + work-type routing: [docs/core-vs-extended.md](docs/core-vs-extended.md).
+1. **Ground-truth only** — every runbook step was verified against a real repository; inference
+   is labeled as inference, and a wrong runbook is worse than none.
+2. **State is derived, not stored** — no mutable status file anywhere; gate verdicts live in
+   immutable evidence (run metadata, build-log closures, tags) and are recomputed.
+3. **No source mutation** — the agents are read-only reporters; every write is a skill action a
+   human sees and authorizes.
+4. **Markdown only** — the discipline is instructions, not code; the sole non-markdown files are
+   `plugin.json` and one JSON Schema.
+
+Full text and the portability gate: [`docs/design-principles.md`](docs/design-principles.md) ·
+tier semantics and the work-type routing table:
+[`docs/core-vs-extended.md`](docs/core-vs-extended.md).
+
+## Provenance & portability
+
+The core skills were **generalized from the operating rules of one real computational-research
+repository** and stress-tested until they read naturally in domains with no shared machinery.
+That source project's identity and vocabulary are deliberately excluded from the shipped pack: a
+mechanical gate requires that `skills/` and `templates/` contain **zero domain terms**. Concrete
+instantiation lives only in [`examples/`](examples/) — five fictional worked examples (deep
+learning, variational quantum algorithms, climate-ensemble calibration, molecular-dynamics free
+energy, and plasma simulation) plus a ten-domain portability matrix, included to demonstrate that
+only the nouns change.
 
 ## Repository map
 
 ```text
-skills/core/…  skills/extended/…  skills/skill-library-generator/
-agents/        templates/         docs/          examples/
-.claude-plugin/plugin.json        LICENSE (MIT)
+skills/core/…            11 everyday-discipline skills
+skills/extended/…         7 reproducibility & positioning skills
+skills/skill-library-generator/   the binder/generator meta-skill
+agents/                   3 read-only auditor agents
+templates/                CLAUDE.md config + routing, decisions skeleton, run-metadata schema
+docs/                     install · quickstart · adoption · core-vs-extended · design-principles
+examples/                 5 worked examples + portability matrix
+.claude-plugin/plugin.json         LICENSE (MIT)
+```
+
+## Citation
+
+```bibtex
+@software{yildiz_aletheia_2026,
+  author  = {Y{\i}ld{\i}z, H{\"u}seyin U{\u{g}}ur},
+  title   = {Aletheia: Operating Discipline for Rigorous, Reproducible
+             Computational-Science Research},
+  year    = {2026},
+  version = {0.1.0},
+  url     = {https://github.com/huguryildiz/Aletheia}
+}
 ```
 
 ## License
 
-MIT © 2026 Huseyin Ugur Yildiz
+MIT © 2026 Hüseyin Uğur Yıldız
